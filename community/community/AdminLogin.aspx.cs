@@ -18,5 +18,10 @@ namespace community
         {
             Session["Admin"] = true;
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["Admin"] = null;
+        }
     }
 }

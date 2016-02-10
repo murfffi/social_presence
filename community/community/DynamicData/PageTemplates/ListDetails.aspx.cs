@@ -145,5 +145,12 @@ namespace community
             }
         }
 
+        protected void ListCommand_Init(object sender, EventArgs e)
+        {
+            WebControl c = (WebControl)sender;
+            c.Enabled = Session["Admin"] != null;
+
+        }
+
     }
 }

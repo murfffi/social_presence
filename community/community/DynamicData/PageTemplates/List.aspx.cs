@@ -58,5 +58,11 @@ namespace community
             GridView1.PageIndex = 0;
         }
 
+        protected void ListCommand_Init(object sender, EventArgs e)
+        {
+            WebControl c = (WebControl)sender;
+            c.Enabled = Session["Admin"] != null;
+
+        }
     }
 }

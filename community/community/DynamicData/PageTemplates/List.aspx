@@ -37,7 +37,7 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:DynamicHyperLink runat="server" Action="Edit" Text="Edit"
-                            />&nbsp;<asp:LinkButton runat="server" CommandName="Delete" Text="Delete"
+                            />&nbsp;<asp:LinkButton runat="server" CommandName="Delete" Text="Delete" OnInit="ListCommand_Init"
                                 OnClientClick='return confirm("Are you sure you want to delete this item?");'
                             />&nbsp;<asp:DynamicHyperLink runat="server" Text="Details" />
                         </ItemTemplate>

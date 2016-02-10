@@ -2,4 +2,5 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         <asp:Button ID="btnLogin" Text="Login" OnClick="btnLogin_Click" runat="server"/>
+        <asp:Button ID="btnLogout" Text="Logout" OnClick="btnLogout_Click" runat="server"/>
 </asp:Content>

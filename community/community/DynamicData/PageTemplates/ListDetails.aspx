@@ -70,7 +70,7 @@
                         <tr class="td">
                             <td colspan="2">
                                 <asp:LinkButton runat="server" CommandName="Edit" Text="Edit" />
-                                <asp:LinkButton runat="server" CommandName="Delete" Text="Delete"
+                                <asp:LinkButton runat="server" CommandName="Delete" Text="Delete" OnInit="ListCommand_Init"
                                     OnClientClick='return confirm("Are you sure you want to delete this item?");' />
                                 <asp:LinkButton runat="server" CommandName="New" Text="New" />
                             </td>
