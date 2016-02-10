@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Social_PresenceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Social_PresenceModelStoreContainer">
+          <EntitySet Name="facebook_page" EntityType="Social_PresenceModel.Store.facebook_page" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Municipality" EntityType="Social_PresenceModel.Store.Municipality" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="post" EntityType="Social_PresenceModel.Store.post" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_facebook_page_Municipality" Association="Social_PresenceModel.Store.FK_facebook_page_Municipality">
+            <End Role="Municipality" EntitySet="Municipality" />
+            <End Role="facebook_page" EntitySet="facebook_page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_post_facebook_page" Association="Social_PresenceModel.Store.FK_post_facebook_page">
+            <End Role="facebook_page" EntitySet="facebook_page" />
+            <End Role="post" EntitySet="post" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="facebook_page">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="municipality_id" Type="int" Nullable="false" />
+          <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="category" Type="nvarchar(max)" />
+          <Property Name="creation_date" Type="date" />
+          <Property Name="short_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="has_phone" Type="bit" Nullable="false" />
+          <Property Name="has_email" Type="bit" Nullable="false" />
+          <Property Name="has_about_page" Type="bit" Nullable="false" />
+          <Property Name="defined_location" Type="nvarchar" MaxLength="100" />
+          <Property Name="website" Type="nvarchar(max)" />
+          <Property Name="milestones_count" Type="int" Nullable="false" />
+          <Property Name="liked_pages" Type="int" Nullable="false" />
+          <Property Name="approved" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipality">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="country" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="population" Type="int" />
+          <Property Name="state" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="website" Type="nvarchar(max)" />
+          <Property Name="approved" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="post">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="likes" Type="int" Nullable="false" />
+          <Property Name="mentions" Type="int" Nullable="false" />
+          <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="length" Type="int" Nullable="false" />
+          <Property Name="contains_hashtags" Type="bit" Nullable="false" />
+          <Property Name="has_responses" Type="bit" Nullable="false" />
+          <Property Name="fan_post" Type="bit" Nullable="false" />
+          <Property Name="facebook_page_id" Type="int" Nullable="false" />
+          <Property Name="approved" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_facebook_page_Municipality">
+          <End Role="Municipality" Type="Social_PresenceModel.Store.Municipality" Multiplicity="1" />
+          <End Role="facebook_page" Type="Social_PresenceModel.Store.facebook_page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="facebook_page">
+              <PropertyRef Name="municipality_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_post_facebook_page">
+          <End Role="facebook_page" Type="Social_PresenceModel.Store.facebook_page" Multiplicity="1" />
+          <End Role="post" Type="Social_PresenceModel.Store.post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facebook_page">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="post">
+              <PropertyRef Name="facebook_page_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Social_PresenceModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Social_PresenceEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="facebook_page" EntityType="Social_PresenceModel.facebook_page" />
+          <EntitySet Name="Municipalities" EntityType="Social_PresenceModel.Municipality" />
+          <EntitySet Name="posts" EntityType="Social_PresenceModel.post" />
+          <AssociationSet Name="FK_facebook_page_Municipality" Association="Social_PresenceModel.FK_facebook_page_Municipality">
+            <End Role="Municipality" EntitySet="Municipalities" />
+            <End Role="facebook_page" EntitySet="facebook_page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_post_facebook_page" Association="Social_PresenceModel.FK_post_facebook_page">
+            <End Role="facebook_page" EntitySet="facebook_page" />
+            <End Role="post" EntitySet="posts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="facebook_page">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="municipality_id" Type="Int32" Nullable="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="category" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="creation_date" Type="DateTime" Precision="0" />
+          <Property Name="short_name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="has_phone" Type="Boolean" Nullable="false" />
+          <Property Name="has_email" Type="Boolean" Nullable="false" />
+          <Property Name="has_about_page" Type="Boolean" Nullable="false" />
+          <Property Name="defined_location" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="milestones_count" Type="Int32" Nullable="false" />
+          <Property Name="liked_pages" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Municipality" Relationship="Social_PresenceModel.FK_facebook_page_Municipality" FromRole="facebook_page" ToRole="Municipality" />
+          <NavigationProperty Name="posts" Relationship="Social_PresenceModel.FK_post_facebook_page" FromRole="facebook_page" ToRole="post" />
+          <Property Type="Boolean" Name="approved" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipality">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="country" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="population" Type="Int32" />
+          <Property Name="state" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="facebook_page" Relationship="Social_PresenceModel.FK_facebook_page_Municipality" FromRole="Municipality" ToRole="facebook_page" />
+          <Property Type="Boolean" Name="approved" Nullable="false" />
+        </EntityType>
+        <EntityType Name="post">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="likes" Type="Int32" Nullable="false" />
+          <Property Name="mentions" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="length" Type="Int32" Nullable="false" />
+          <Property Name="contains_hashtags" Type="Boolean" Nullable="false" />
+          <Property Name="has_responses" Type="Boolean" Nullable="false" />
+          <Property Name="fan_post" Type="Boolean" Nullable="false" />
+          <Property Name="facebook_page_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="facebook_page" Relationship="Social_PresenceModel.FK_post_facebook_page" FromRole="post" ToRole="facebook_page" />
+          <Property Type="Boolean" Name="approved" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_facebook_page_Municipality">
+          <End Role="Municipality" Type="Social_PresenceModel.Municipality" Multiplicity="1" />
+          <End Role="facebook_page" Type="Social_PresenceModel.facebook_page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipality">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="facebook_page">
+              <PropertyRef Name="municipality_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_post_facebook_page">
+          <End Role="facebook_page" Type="Social_PresenceModel.facebook_page" Multiplicity="1" />
+          <End Role="post" Type="Social_PresenceModel.post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facebook_page">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="post">
+              <PropertyRef Name="facebook_page_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Social_PresenceModelStoreContainer" CdmEntityContainer="Social_PresenceEntities">
+          <EntitySetMapping Name="facebook_page">
+            <EntityTypeMapping TypeName="Social_PresenceModel.facebook_page">
+              <MappingFragment StoreEntitySet="facebook_page">
+                <ScalarProperty Name="approved" ColumnName="approved" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="short_name" ColumnName="short_name" />
+                <ScalarProperty Name="has_phone" ColumnName="has_phone" />
+                <ScalarProperty Name="has_email" ColumnName="has_email" />
+                <ScalarProperty Name="has_about_page" ColumnName="has_about_page" />
+                <ScalarProperty Name="defined_location" ColumnName="defined_location" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="milestones_count" ColumnName="milestones_count" />
+                <ScalarProperty Name="liked_pages" ColumnName="liked_pages" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipalities">
+            <EntityTypeMapping TypeName="Social_PresenceModel.Municipality">
+              <MappingFragment StoreEntitySet="Municipality">
+                <ScalarProperty Name="approved" ColumnName="approved" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="population" ColumnName="population" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="website" ColumnName="website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="posts">
+            <EntityTypeMapping TypeName="Social_PresenceModel.post">
+              <MappingFragment StoreEntitySet="post">
+                <ScalarProperty Name="approved" ColumnName="approved" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="likes" ColumnName="likes" />
+                <ScalarProperty Name="mentions" ColumnName="mentions" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="length" ColumnName="length" />
+                <ScalarProperty Name="contains_hashtags" ColumnName="contains_hashtags" />
+                <ScalarProperty Name="has_responses" ColumnName="has_responses" />
+                <ScalarProperty Name="fan_post" ColumnName="fan_post" />
+                <ScalarProperty Name="facebook_page_id" ColumnName="facebook_page_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
