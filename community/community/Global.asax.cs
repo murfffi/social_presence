@@ -76,6 +76,13 @@ namespace community
                 CdnSupportsSecureConnection = true,
                 LoadSuccessExpression = "window.jQuery"
             });
+
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery-ui", new ScriptResourceDefinition
+            {
+                Path = "~/Scripts/jquery-ui.min.js",
+                DebugPath = "~/Scripts/jquery-ui.js",
+                CdnSupportsSecureConnection = true
+            });
         }
 
         void Application_Start(object sender, EventArgs e)

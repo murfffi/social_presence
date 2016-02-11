@@ -34,6 +34,7 @@ namespace community
         public int milestones_count { get; set; }
         public int liked_pages { get; set; }
         public bool approved { get; set; }
+        public string contributor_email { get; set; }
     
         public virtual Municipality Municipality { get; set; }
         public virtual ICollection<post> posts { get; set; }

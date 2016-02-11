@@ -28,5 +28,6 @@ namespace community
         public DbSet<facebook_page> facebook_page { get; set; }
         public DbSet<Municipality> Municipalities { get; set; }
         public DbSet<post> posts { get; set; }
+        public DbSet<Contributor> Contributors { get; set; }
     }
 }

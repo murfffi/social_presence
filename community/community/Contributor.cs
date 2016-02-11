@@ -12,22 +12,9 @@ namespace community
     using System;
     using System.Collections.Generic;
     
-    public partial class Municipality
+    public partial class Contributor
     {
-        public Municipality()
-        {
-            this.facebook_page = new HashSet<facebook_page>();
-        }
-    
+        public string email { get; set; }
         public string name { get; set; }
-        public int id { get; set; }
-        public string country { get; set; }
-        public Nullable<int> population { get; set; }
-        public string state { get; set; }
-        public string website { get; set; }
-        public bool approved { get; set; }
-        public string contributor_email { get; set; }
-    
-        public virtual ICollection<facebook_page> facebook_page { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace community
         public bool fan_post { get; set; }
         public int facebook_page_id { get; set; }
         public bool approved { get; set; }
+        public string contributor_email { get; set; }
     
         public virtual facebook_page facebook_page { get; set; }
     }

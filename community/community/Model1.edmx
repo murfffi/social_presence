@@ -6,6 +6,7 @@
     <edmx:StorageModels>
     <Schema Namespace="Social_PresenceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="Social_PresenceModelStoreContainer">
+          <EntitySet Name="Contributor" EntityType="Social_PresenceModel.Store.Contributor" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="facebook_page" EntityType="Social_PresenceModel.Store.facebook_page" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Municipality" EntityType="Social_PresenceModel.Store.Municipality" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="post" EntityType="Social_PresenceModel.Store.post" store:Type="Tables" Schema="dbo" />
@@ -18,6 +19,13 @@
             <End Role="post" EntitySet="post" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Contributor">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
         <EntityType Name="facebook_page">
           <Key>
             <PropertyRef Name="id" />
@@ -37,6 +45,7 @@
           <Property Name="milestones_count" Type="int" Nullable="false" />
           <Property Name="liked_pages" Type="int" Nullable="false" />
           <Property Name="approved" Type="bit" Nullable="false" />
+          <Property Name="contributor_email" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Municipality">
           <Key>
@@ -49,6 +58,7 @@
           <Property Name="state" Type="nvarchar(max)" Nullable="false" />
           <Property Name="website" Type="nvarchar(max)" />
           <Property Name="approved" Type="bit" Nullable="false" />
+          <Property Name="contributor_email" Type="nchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="post">
           <Key>
@@ -66,6 +76,7 @@
           <Property Name="fan_post" Type="bit" Nullable="false" />
           <Property Name="facebook_page_id" Type="int" Nullable="false" />
           <Property Name="approved" Type="bit" Nullable="false" />
+          <Property Name="contributor_email" Type="nchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_facebook_page_Municipality">
           <End Role="Municipality" Type="Social_PresenceModel.Store.Municipality" Multiplicity="1" />
@@ -107,6 +118,7 @@
             <End Role="facebook_page" EntitySet="facebook_page" />
             <End Role="post" EntitySet="posts" />
           </AssociationSet>
+          <EntitySet Name="Contributors" EntityType="Social_PresenceModel.Contributor" />
         </EntityContainer>
         <EntityType Name="facebook_page">
           <Key>
@@ -129,6 +141,7 @@
           <NavigationProperty Name="Municipality" Relationship="Social_PresenceModel.FK_facebook_page_Municipality" FromRole="facebook_page" ToRole="Municipality" />
           <NavigationProperty Name="posts" Relationship="Social_PresenceModel.FK_post_facebook_page" FromRole="facebook_page" ToRole="post" />
           <Property Type="Boolean" Name="approved" Nullable="false" />
+          <Property Type="String" Name="contributor_email" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Municipality">
           <Key>
@@ -142,6 +155,7 @@
           <Property Name="website" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="facebook_page" Relationship="Social_PresenceModel.FK_facebook_page_Municipality" FromRole="Municipality" ToRole="facebook_page" />
           <Property Type="Boolean" Name="approved" Nullable="false" />
+          <Property Type="String" Name="contributor_email" MaxLength="100" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="post">
           <Key>
@@ -160,6 +174,7 @@
           <Property Name="facebook_page_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="facebook_page" Relationship="Social_PresenceModel.FK_post_facebook_page" FromRole="post" ToRole="facebook_page" />
           <Property Type="Boolean" Name="approved" Nullable="false" />
+          <Property Type="String" Name="contributor_email" MaxLength="100" FixedLength="true" Unicode="true" />
         </EntityType>
         <Association Name="FK_facebook_page_Municipality">
           <End Role="Municipality" Type="Social_PresenceModel.Municipality" Multiplicity="1" />
@@ -185,6 +200,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Contributor">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Type="String" Name="email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -194,6 +216,7 @@
           <EntitySetMapping Name="facebook_page">
             <EntityTypeMapping TypeName="Social_PresenceModel.facebook_page">
               <MappingFragment StoreEntitySet="facebook_page">
+                <ScalarProperty Name="contributor_email" ColumnName="contributor_email" />
                 <ScalarProperty Name="approved" ColumnName="approved" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
@@ -215,6 +238,7 @@
           <EntitySetMapping Name="Municipalities">
             <EntityTypeMapping TypeName="Social_PresenceModel.Municipality">
               <MappingFragment StoreEntitySet="Municipality">
+                <ScalarProperty Name="contributor_email" ColumnName="contributor_email" />
                 <ScalarProperty Name="approved" ColumnName="approved" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -228,6 +252,7 @@
           <EntitySetMapping Name="posts">
             <EntityTypeMapping TypeName="Social_PresenceModel.post">
               <MappingFragment StoreEntitySet="post">
+                <ScalarProperty Name="contributor_email" ColumnName="contributor_email" />
                 <ScalarProperty Name="approved" ColumnName="approved" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -240,6 +265,14 @@
                 <ScalarProperty Name="has_responses" ColumnName="has_responses" />
                 <ScalarProperty Name="fan_post" ColumnName="fan_post" />
                 <ScalarProperty Name="facebook_page_id" ColumnName="facebook_page_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contributors">
+            <EntityTypeMapping TypeName="Social_PresenceModel.Contributor">
+              <MappingFragment StoreEntitySet="Contributor">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

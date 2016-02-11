@@ -13,9 +13,15 @@ namespace community
             {
                 throw new InvalidOperationException("There are no accessible tables. Make sure that at least one data model is registered in Global.asax and scaffolding is enabled or implement custom pages.");
             }
+
+            MetaTable firstTable = Global.DefaultModel.GetTable("Municipalities");
+            visibleTables.Remove(firstTable);
+            visibleTables.Insert(0, firstTable);
             Menu1.DataSource = visibleTables;
             Menu1.DataBind();
         }
 
     }
+
+
 }

@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server" />
+    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server"/>
 
     <div style="float: right"><a href="AdminLogin.aspx">Admin</a></div>
     <div style="float: right; margin-right:5px;"><a href="Charts.aspx">Charts</a></div>

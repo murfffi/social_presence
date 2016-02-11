@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="Social_PresenceModel.post" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="Social_PresenceModel.FK_facebook_page_Municipality" ManuallyRouted="false" />
         <AssociationConnector Association="Social_PresenceModel.FK_post_facebook_page" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Social_PresenceModel.Contributor" Width="1.5" PointX="7.25" PointY="2.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
