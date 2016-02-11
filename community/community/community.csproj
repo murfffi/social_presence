@@ -77,6 +77,7 @@
       <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Tables.cs" />
+    <Compile Include="Utils.cs" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="Charts.aspx" />
     <Content Include="Default.aspx" />
