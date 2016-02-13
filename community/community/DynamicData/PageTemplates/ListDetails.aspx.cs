@@ -54,7 +54,10 @@ namespace community
             else
             {
                 bool isAdmin = Session["Admin"] != null;
-                FormView1.FindControl("phEditOptions").Visible = isAdmin;
+                if (FormView1.FindControl("phEditOptions") != null)
+                {
+                   FormView1.FindControl("phEditOptions").Visible = isAdmin;
+                }
             }
         }
 

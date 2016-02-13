@@ -16,5 +16,6 @@ namespace community
     {
         public string email { get; set; }
         public string name { get; set; }
+        public bool admin { get; set; }
     }
 }

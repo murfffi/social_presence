@@ -25,6 +25,7 @@
           </Key>
           <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="admin" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="facebook_page">
           <Key>
@@ -211,6 +212,7 @@
           </Key>
           <Property Type="String" Name="email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="admin" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -276,6 +278,7 @@
           <EntitySetMapping Name="Contributors">
             <EntityTypeMapping TypeName="Social_PresenceModel.Contributor">
               <MappingFragment StoreEntitySet="Contributor">
+                <ScalarProperty Name="admin" ColumnName="admin" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>

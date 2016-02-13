@@ -7,6 +7,6 @@ namespace community
 {
     public class Constants
     {
-        public const String URL_REGEX = @"@^(https?|ftp)://[^\s/$.?#].[^\s]*$@i";
+        public const String URL_REGEX = @"^(https?|ftp)://[^\s/$.?#].[^\s]*$";
     }
 }
