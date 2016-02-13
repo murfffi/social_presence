@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Text;
 using System.Web.DynamicData;
 using System.Web.Routing;
 using System.Web.UI;
@@ -148,6 +151,17 @@ namespace community
                     button.OnClientClick = "return confirm('Are you sure you want to delete this item?');";
                 }
             }
+        }
+
+        protected void btnCsvExport_Click(object sender, EventArgs e)
+        {
+            Response.Clear();
+            Response.AddHeader("content-disposition", "attachment; filename=" + table.EntityType.Name + ".csv");
+            Response.ContentEncoding = Encoding.GetEncoding("Windows-1251");
+            Response.ContentType = "text/csv";
+            CsvWriter writer = new CsvWriter(Response.Output);
+            writer.WriteRecords(new Social_PresenceEntities().Set(table.EntityType));
+            Response.End();
         }
 
     }

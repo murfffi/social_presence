@@ -3,7 +3,7 @@
 <%@ Reference Control="~/DynamicData/EntityTemplates/Default.ascx" %>
 <asp:EntityTemplate runat="server" ID="EntityTemplate1">
     <ItemTemplate>
-        <tr class="td">
+        <tr class="td" title="" runat="server" oninit="Unnamed_Init">
             <td class="DDLightHeader">
                 <asp:Label runat="server" OnInit="Label_Init" OnPreRender="Label_PreRender" />
             </td>

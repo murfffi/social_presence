@@ -56,6 +56,8 @@
                 <asp:DynamicFilterExpression ControlID="FilterRepeater" />
             </asp:QueryExtender>
 
+            <asp:Button runat="server" ID="btnCsvExport" OnClick="btnCsvExport_Click" Text="Export to CSV" />
+
             <asp:Panel ID="DetailsPanel" runat="server">
                 <br /><br />
 
@@ -66,7 +68,7 @@
                         <table id="detailsTable" class="DDDetailsTable" cellpadding="6">
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <asp:DynamicEntity runat="server" />
+                        <asp:DynamicEntity runat="server"/>
                         <tr class="td">
                             <td colspan="2">
                                 <asp:PlaceHolder ID="phEditOptions" runat="server">

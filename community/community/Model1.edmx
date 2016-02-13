@@ -147,7 +147,12 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" >
+            <Documentation>
+              <Summary>Test summary</Summary>
+              <LongDescription>Test description</LongDescription>
+            </Documentation>
+          </Property>
           <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="country" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="population" Type="Int32" />

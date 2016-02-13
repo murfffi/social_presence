@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace community
 {
     public partial class Default_EditEntityTemplate : System.Web.DynamicData.EntityTemplateUserControl
     {
-        private MetaColumn currentColumn;
+        public MetaColumn currentColumn;
 
         protected override void OnLoad(EventArgs e)
         {
@@ -44,6 +45,12 @@ namespace community
         {
             DynamicControl dynamicControl = (DynamicControl)sender;
             dynamicControl.DataField = currentColumn.Name;
+        }
+
+        protected void Unnamed_Init(object sender, EventArgs e)
+        {
+            HtmlTableRow c = (HtmlTableRow)sender;
+            c.Attributes["title"] = currentColumn.Name;
         }
 
     }

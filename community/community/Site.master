@@ -138,6 +138,12 @@
     <div id="footer">
         <a href="#" onclick='$( "#dialog" ).dialog()'>Embed</a>
     </div>
+
+    <script>
+        $(function () {
+            $(document).tooltip();
+        });
+    </script>
 </body>
 </html>
 
