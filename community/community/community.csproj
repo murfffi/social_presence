@@ -88,6 +88,14 @@
       <DependentUpon>LoginService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="sendemail.cs" />
+    <Compile Include="SNDEML.aspx.cs">
+      <DependentUpon>SNDEML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SNDEML.aspx.designer.cs">
+      <DependentUpon>SNDEML.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="Charts.aspx" />
@@ -160,7 +168,10 @@
     <Compile Include="Site.master.designer.cs">
       <DependentUpon>Site.master</DependentUpon>
     </Compile>
-    <Content Include="web.config" />
+    <Content Include="SNDEML.aspx" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="DynamicData\web.config" />
     <Content Include="DynamicData\Content\GridViewPager.ascx" />
     <Compile Include="DynamicData\Content\GridViewPager.ascx.cs">
