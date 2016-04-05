@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         <asp:Chart ID="ChartHasPhone" runat="server" DataSourceID="SqlDataSourceCommunity" OnLoad="Chart1_Load">
             <series>
-                <asp:Series ChartType="Pie" Name="Series1" XValueMember="has_phone" YValueMembers="cnt" Legend="LegendHasPhones">
+                <asp:Series ChartType="Pie" Name="Series1" XValueMember="has_phone" YValueMembers="cnt" Legend="Legend1" IsValueShownAsLabel="True">
                 </asp:Series>
             </series>
             <chartareas>
@@ -13,7 +13,7 @@
                 </asp:ChartArea>
             </chartareas>
             <Legends>
-                <asp:Legend DockedToChartArea="ChartArea1" IsDockedInsideChartArea="False" Name="LegendHasPhones" Title="Legend">
+                <asp:Legend Name="Legend1" Title="Legend">
                 </asp:Legend>
             </Legends>
             <Titles>
@@ -21,5 +21,5 @@
                 </asp:Title>
             </Titles>
         </asp:Chart>
-        <asp:SqlDataSource ID="SqlDataSourceCommunity" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="SELECT count(id) as cnt, [has_phone] FROM [facebook_page] group by [has_phone]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourceCommunity" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="SELECT count(id) as cnt, iif([has_phone] = 1, 'yes', 'no') as has_phone FROM [facebook_page] group by [facebook_page].[has_phone]"></asp:SqlDataSource>
    </asp:Content> 

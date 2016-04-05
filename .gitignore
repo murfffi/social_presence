@@ -1,2 +1,7 @@
 /community/community/bin
 /community/community/obj
+*.suo
+*.log
+/SpAzureDb/SpAzureDb/SpAzureDb.sqlproj.user
+/SpAzureDb/SpAzureDb/bin/Debug
+/SpAzureDb/SpAzureDb/obj/Debug
