@@ -32,7 +32,14 @@ namespace community
 
         protected override void OnDataBinding(EventArgs e)
         {
-            Calendar1.SelectedDate = DateTime.ParseExact(FieldValueEditString, "dd-MMM-yy hh:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture);
+            if (String.IsNullOrEmpty(FieldValueEditString))
+            {
+                Calendar1.SelectedDate = DateTime.Now;
+            }
+            else
+            {
+                Calendar1.SelectedDate = DateTime.ParseExact(FieldValueEditString, "dd-MMM-yy hh:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture);
+            }
             Calendar1.VisibleDate = Calendar1.SelectedDate;
         }
 
