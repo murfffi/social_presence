@@ -18,5 +18,9 @@ namespace community
         {
 
         }
+        protected void Chart1_Load1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
