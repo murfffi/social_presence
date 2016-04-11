@@ -17,11 +17,13 @@ namespace community
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             Session["Admin"] = true;
+            Session["Email"] = "admin@test.com";
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session["Admin"] = null;
+            Session["Email"] = "nonadmin@test.com";
         }
     }
 }

@@ -71,7 +71,7 @@
                         <asp:DynamicEntity runat="server"/>
                         <tr class="td">
                             <td colspan="2">
-                                <asp:PlaceHolder ID="phEditOptions" runat="server">
+                                <asp:PlaceHolder ID="phEditOptions" runat="server" OnPreRender="phEditOptions_PreRender">
                                     <asp:LinkButton runat="server" CommandName="Edit" Text="Edit" />
                                     <asp:LinkButton runat="server" CommandName="Delete" Text="Delete"
                                         OnClientClick='return confirm("Are you sure you want to delete this item?");' />

@@ -42,7 +42,6 @@ namespace community
                 {
                     Session["Admin"] = true;
                 }
-
             }
         }
 

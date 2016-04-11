@@ -32,6 +32,15 @@ namespace community
             }
         }
 
+        protected override void OnPreRender(EventArgs e)
+        {
+            base.OnPreRender(e);
+            if (Mode == DataBoundControlMode.Insert && Column.Name == "contributor_email")
+            {
+                TextBox1.Text = (String)Session["Email"];
+            }
+        }
+
         protected override void ExtractValues(IOrderedDictionary dictionary)
         {
             dictionary[Column.Name] = ConvertEditedValue(TextBox1.Text);
