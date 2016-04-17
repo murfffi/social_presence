@@ -33,7 +33,7 @@ namespace community
             DefaultModel.RegisterContext(() =>
             {
                 return ((IObjectContextAdapter)new Social_PresenceEntities()).ObjectContext;
-            }, new ContextConfiguration() { ScaffoldAllTables = true });
+            }, new ContextConfiguration() { ScaffoldAllTables = false });
 
             // The following registration should be used if YourDataContextType does not derive from DbContext
             // DefaultModel.RegisterContext(typeof(Social_PresenceDataContext), new ContextConfiguration() { ScaffoldAllTables = true });

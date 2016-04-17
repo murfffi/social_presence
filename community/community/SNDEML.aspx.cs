@@ -11,7 +11,7 @@ namespace community
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         SendEmail mailer = new SendEmail();
@@ -27,8 +27,10 @@ namespace community
 
             eMail.Subject = "Test";
             eMail.Body = "This is test!!!!";
-            eMail.ToAddress = "evelina.nozhcheva@gmail.com";
+            eMail.ToAddress = "evelina.nozhcheva@gmail.com";//"kspassov@gmail.com"; //"evelina.nozhcheva@gmail.com";
             mailer.SendMail(sender, eMail);
+            Literal1.Text = "Email was sent successfully!";
+            Literal1.Visible = true;
         }
     }
 }

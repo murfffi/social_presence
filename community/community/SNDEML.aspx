@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <asp:Button ID="btnSend" runat="server" Text="Send Email" OnClick="btnSend_Click" />
+        <asp:Literal ID="Literal1" runat="server" Visible ="false"></asp:Literal>
     </div>
     </form>
 </body>

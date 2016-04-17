@@ -7,6 +7,7 @@ using System.Web;
 
 namespace community
 {
+    [ScaffoldTable(true)]
     [DisplayName("Facebook Pages")]
     [MetadataType(typeof(FacebookPageMetadata))]
     public partial class facebook_page
@@ -15,6 +16,9 @@ namespace community
 
     public class FacebookPageMetadata
     {
+        [Display(Order = 1)]
+        public object name;
+
         [RegularExpression(Constants.URL_REGEX, ErrorMessage="The URL is invalid.")]
         [UIHint("Text")] // show as regular textbox, not multiline, even though max length is a lot
         [StringLength(1000)] 
@@ -26,11 +30,13 @@ namespace community
         public object website;
     }
 
+    [ScaffoldTable(true)]
     [DisplayName("Facebook Posts")]
     public partial class post
     {
     }
 
+    [ScaffoldTable(true)]
     [MetadataType(typeof(MunicipalityMetadata))]
     public partial class Municipality
     {
@@ -42,10 +48,5 @@ namespace community
         [UIHint("Text")] // show as regular textbox, not multiline, even though max length is a lot
         [StringLength(1000)]
         public object website;
-    }
-
-    [ReadOnly(true)]
-    public partial class Contributor
-    {
     }
 }

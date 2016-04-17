@@ -38,6 +38,7 @@ namespace community
             if (Mode == DataBoundControlMode.Insert && Column.Name == "contributor_email")
             {
                 TextBox1.Text = (String)Session["Email"];
+                TextBox1.ReadOnly = true;
             }
         }
 
