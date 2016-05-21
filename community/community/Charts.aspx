@@ -120,4 +120,22 @@ where creation_date is not null
 order by creation_date"></asp:SqlDataSource></div>
         </div>
         <asp:SqlDataSource ID="SqlDataSourcePagesByCategory" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="SELECT count(id) AS cnt, category FROM [facebook_page] GROUP BY [facebook_page].[category]"></asp:SqlDataSource>
+        <asp:Chart ID="Chart4" runat="server" DataSourceID="SqlDataSourceActivity">
+            <Series>
+                <asp:Series Name="Series1" XValueMember="post_year" YValueMembers="Column1">
+                </asp:Series>
+            </Series>
+            <ChartAreas>
+                <asp:ChartArea Name="ChartArea1">
+                </asp:ChartArea>
+            </ChartAreas>
+        </asp:Chart>
+        <asp:SqlDataSource ID="SqlDataSourceActivity" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="select count(1), post_year
+from (
+
+select year(date) as post_year, facebook_page_id
+from post
+group by year(date), facebook_page_id) as tbl
+
+group by post_year"></asp:SqlDataSource>
    </asp:Content> 
