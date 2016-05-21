@@ -5,3 +5,8 @@
 /SpAzureDb/SpAzureDb/SpAzureDb.sqlproj.user
 /SpAzureDb/SpAzureDb/bin/Debug
 /SpAzureDb/SpAzureDb/obj/Debug
+/community/sync/bin/Debug
+/community/sync/obj/Debug
+/community/tests/bin/Debug
+/community/tests/obj/Debug
+/community/tests/obj/Release

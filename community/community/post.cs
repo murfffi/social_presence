@@ -14,7 +14,7 @@ namespace community
     
     public partial class post
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public string title { get; set; }
         public System.DateTime date { get; set; }
         public int likes { get; set; }

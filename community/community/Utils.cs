@@ -27,5 +27,31 @@ namespace community
             }
             return null;
         }
+
+        public static void SyncPosts()
+        {
+            CommunityFbClient client = new CommunityFbClient();
+            Social_PresenceEntities model = new Social_PresenceEntities();
+            foreach (var page in model.facebook_page)
+            {
+                if (page.website == null)
+                {
+                    continue;
+                }
+                Console.WriteLine("Retrieving posts for page {0}; id: {1}", page.website, page.id);
+                List<post> posts = client.GetPosts(page.url, page.contributor_email, page.id);
+                foreach (var newPost in posts) 
+                {
+                    var existingPost = model.posts.First(p => p.id == newPost.id);
+                    if (existingPost != null)
+                    {
+                        model.posts.Remove(existingPost);
+                    }
+                    model.posts.Add(newPost);
+                    Console.WriteLine("Added new post with ID: " + newPost.id); 
+                }
+            }
+            model.SaveChanges();
+        }
     }
 }

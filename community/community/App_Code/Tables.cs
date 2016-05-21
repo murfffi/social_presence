@@ -34,6 +34,10 @@ namespace community
     [DisplayName("Facebook Posts")]
     public partial class post
     {
+        public override string ToString()
+        {
+            return new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(this);
+        }
     }
 
     [ScaffoldTable(true)]
