@@ -37,7 +37,7 @@
                 </EmptyDataTemplate>
             </asp:FormView>
 
-            <asp:EntityDataSource ID="DetailsDataSource" runat="server" EnableDelete="true" />
+            <ef:EntityDataSource ID="DetailsDataSource" runat="server" EnableDelete="true" />
 
             <asp:QueryExtender TargetControlID="DetailsDataSource" ID="DetailsQueryExtender" runat="server">
                 <asp:DynamicRouteExpression />

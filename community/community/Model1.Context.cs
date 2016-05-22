@@ -25,9 +25,9 @@ namespace community
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<facebook_page> facebook_page { get; set; }
-        public DbSet<Municipality> Municipalities { get; set; }
-        public DbSet<post> posts { get; set; }
-        public DbSet<Contributor> Contributors { get; set; }
+        public virtual DbSet<facebook_page> facebook_page { get; set; }
+        public virtual DbSet<Municipality> Municipalities { get; set; }
+        public virtual DbSet<post> posts { get; set; }
+        public virtual DbSet<Contributor> Contributors { get; set; }
     }
 }

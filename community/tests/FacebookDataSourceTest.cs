@@ -11,10 +11,10 @@ namespace tests
         [TestMethod]
         public void TestGetPosts()
         {
-            CommunityFbClient c = new CommunityFbClient();
-            List<post> posts = c.GetPosts("https://www.facebook.com/ObshtinaBlagoevgrad", "system@example.com", 11);
+            CommunityFbClient c = new CommunityFbClient(100);
+            List<post> posts = c.GetPosts("https://www.facebook.com/ObshtinaBlagoevgrad", "system@example.com", 11, 5);
             Console.WriteLine(String.Join("\n", posts));
-            Assert.IsTrue(posts.Count > 5);
+            Assert.AreEqual(5, posts.Count);
         }
     }
 }

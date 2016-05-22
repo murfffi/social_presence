@@ -30,10 +30,13 @@ namespace community
             // Note: Make sure that you change "YourDataContextType" to the name of the data context
             // class in your application.
             // See http://go.microsoft.com/fwlink/?LinkId=257395 for more information on how to register Entity Data Model with Dynamic Data            
-            DefaultModel.RegisterContext(() =>
-            {
-                return ((IObjectContextAdapter)new Social_PresenceEntities()).ObjectContext;
-            }, new ContextConfiguration() { ScaffoldAllTables = false });
+            
+
+            DefaultModel.RegisterContext(
+            new Microsoft.AspNet.DynamicData.ModelProviders.EFDataModelProvider(() => new Social_PresenceEntities()),
+            new ContextConfiguration { ScaffoldAllTables = false });  
+
+
 
             // The following registration should be used if YourDataContextType does not derive from DbContext
             // DefaultModel.RegisterContext(typeof(Social_PresenceDataContext), new ContextConfiguration() { ScaffoldAllTables = true });

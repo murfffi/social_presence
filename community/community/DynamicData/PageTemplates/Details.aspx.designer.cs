@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace community
-{
-
-
-    public partial class Details
-    {
-
+namespace community {
+    
+    
+    public partial class Details {
+        
         /// <summary>
         /// DynamicDataManager1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace community
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.DynamicData.DynamicDataManager DynamicDataManager1;
-
+        
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace community
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-
+        
         /// <summary>
         /// ValidationSummary1 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace community
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
-
+        
         /// <summary>
         /// DetailsViewValidator control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace community
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.DynamicData.DynamicValidator DetailsViewValidator;
-
+        
         /// <summary>
         /// FormView1 control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace community
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView FormView1;
-
+        
         /// <summary>
         /// DetailsDataSource control.
         /// </summary>
@@ -66,8 +64,8 @@ namespace community
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource DetailsDataSource;
-
+        protected global::Microsoft.AspNet.EntityDataSource.EntityDataSource DetailsDataSource;
+        
         /// <summary>
         /// DetailsQueryExtender control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace community
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.QueryExtender DetailsQueryExtender;
-
+        
         /// <summary>
         /// ListHyperLink control.
         /// </summary>
