@@ -11,7 +11,7 @@ namespace sync
     {
         static void Main(string[] args)
         {
-            Utils.SyncPosts();
+            Utils.SyncPosts(Utils.SYNC_NEW_PAGES);
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Web.UI;
 
 namespace community
 {
+    using PageSyncFilter = Func<Social_PresenceEntities, facebook_page, bool>;
+
     public class Utils
     {
         public static Control FindDataControlRecursive(Control rootControl, string columnName, TraceContext traceContext)
@@ -28,26 +30,31 @@ namespace community
             return null;
         }
 
-        public static void SyncPosts()
+        public static readonly PageSyncFilter SYNC_ALL_PAGES = (db, page) => true;
+
+        public static readonly PageSyncFilter SYNC_NEW_PAGES =
+            (db, page) => db.posts.FirstOrDefault(post => post.facebook_page_id == page.id) == null;  
+
+        public static void SyncPosts(PageSyncFilter filter)
         {
             IFbClient client = new CommunityFbClient(1000);
             Social_PresenceEntities model = new Social_PresenceEntities();
-            SyncPosts(client, model);
-            model.SaveChanges();
+            SyncPosts(client, model, filter);
         }
 
-        public static void SyncPosts(IFbClient client, Social_PresenceEntities model)
+        public static void SyncPosts(IFbClient client, Social_PresenceEntities model, PageSyncFilter filter)
         {
-            foreach (var page in model.facebook_page)
+            var pages = new List<facebook_page>(model.facebook_page);
+            foreach (var page in pages)
             {
-                if (page.website == null)
+                if (page.url == null || !filter(model, page))
                 {
                     continue;
                 }
 
                 try
                 {
-                    Console.WriteLine("Retrieving posts for page {0}; id: {1}", page.website, page.id);
+                    Console.WriteLine("Retrieving posts for page {0}; id: {1}", page.url, page.id);
                     List<post> posts = client.GetPosts(page.url, page.contributor_email, page.id, Int32.MaxValue);
                     foreach (var newPost in posts)
                     {
@@ -64,6 +71,9 @@ namespace community
                 {
                     Console.WriteLine("Error retrieving posts for page {0}: {1}.", page.url, e);
                 }
+
+                Console.WriteLine("Saving posts ...");
+                model.SaveChanges();
 
             }
         }
