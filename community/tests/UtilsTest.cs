@@ -21,7 +21,7 @@ namespace tests
             var mockPageDbSet = mockDbSet(new List<facebook_page>() { makePage(1) });
             mockContext.Setup(m => m.facebook_page).Returns(mockPageDbSet.Object);
 
-            var mockClient = new Mock<IFbClient>();
+            var mockClient = new Mock<ICommunityClient>();
 
             var testPosts = makePosts(1, 1);
             mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue))
@@ -42,7 +42,7 @@ namespace tests
             var mockPageDbSet = mockDbSet(new List<facebook_page>() { makePage(1) });
             mockContext.Setup(m => m.facebook_page).Returns(mockPageDbSet.Object);
 
-            var mockClient = new Mock<IFbClient>();
+            var mockClient = new Mock<ICommunityClient>();
 
             mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue))
                 .Returns(testPosts);
@@ -59,7 +59,7 @@ namespace tests
             var mockPostDbSet = mockDbSet(new List<post>());
             mockContext.Setup(m => m.posts).Returns(mockPostDbSet.Object);
 
-            var mockClient = new Mock<IFbClient>();
+            var mockClient = new Mock<ICommunityClient>();
 
             var pageList = new List<facebook_page>();
             for (int i = 0; i < 3; ++i)
@@ -86,7 +86,7 @@ namespace tests
             var mockPageDbSet = mockDbSet(new List<facebook_page>() { makePage(1) });
             mockContext.Setup(m => m.facebook_page).Returns(mockPageDbSet.Object);
 
-            var mockClient = new Mock<IFbClient>();
+            var mockClient = new Mock<ICommunityClient>();
 
             var testPosts = makePosts(1, 1);
             mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue))

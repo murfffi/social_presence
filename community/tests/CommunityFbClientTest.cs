@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace tests
 {
     [TestClass]
-    public class FacebookDataSourceTest
+    public class CommunityFbClientTest
     {
         [TestMethod]
         public void TestGetPosts()

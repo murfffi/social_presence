@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace community
 {
-    public interface IFbClient
+    public interface ICommunityClient
     {
         List<post> GetPosts(String page, String contributorEmail, int pageId, int limit);
     }

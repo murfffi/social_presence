@@ -7,7 +7,7 @@ using System.Web;
 
 namespace community
 {
-    public class CommunityFbClient : IFbClient
+    public class CommunityFbClient : ICommunityClient
     {
         private readonly FacebookClient client = new FacebookClient("541069762740573|onSnaCSnHAUqceURGGh9e7pMMX8");
         private int delayMillis;

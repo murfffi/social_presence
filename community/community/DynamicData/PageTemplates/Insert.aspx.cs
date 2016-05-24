@@ -43,7 +43,7 @@ namespace community
 
         protected void FormView1_DataBound(object sender, EventArgs e)
         {
-            Trace.Write(Utils.FindDataControlRecursive(this, "has_email", Trace).ClientID);
+            
         }
 
     }

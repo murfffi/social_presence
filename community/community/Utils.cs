@@ -11,25 +11,6 @@ namespace community
 
     public class Utils
     {
-        public static Control FindDataControlRecursive(Control rootControl, string columnName, TraceContext traceContext)
-        {
-            if (rootControl is FieldTemplateUserControl)
-            {
-                FieldTemplateUserControl ctrl = (FieldTemplateUserControl)rootControl;
-                traceContext.Write("Column: " + ctrl.Column.Name);
-                if (ctrl.Column.Name == columnName) return ctrl;
-            }
-
-            traceContext.Write(rootControl.GetType().Name);
-            foreach (Control controlToSearch in rootControl.Controls)
-            {
-                Control controlToReturn =
-                    FindDataControlRecursive(controlToSearch, columnName, traceContext);
-                if (controlToReturn != null) return controlToReturn;
-            }
-            return null;
-        }
-
         public static readonly PageSyncFilter SYNC_ALL_PAGES = (db, page) => true;
 
         public static readonly PageSyncFilter SYNC_NEW_PAGES =
@@ -37,12 +18,12 @@ namespace community
 
         public static void SyncPosts(PageSyncFilter filter)
         {
-            IFbClient client = new CommunityFbClient(1000);
+            ICommunityClient client = new CommunityFbClient(1000);
             Social_PresenceEntities model = new Social_PresenceEntities();
             SyncPosts(client, model, filter);
         }
 
-        public static void SyncPosts(IFbClient client, Social_PresenceEntities model, PageSyncFilter filter)
+        public static void SyncPosts(ICommunityClient client, Social_PresenceEntities model, PageSyncFilter filter)
         {
             var pages = new List<facebook_page>(model.facebook_page);
             foreach (var page in pages)

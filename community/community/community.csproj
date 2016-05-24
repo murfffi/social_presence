@@ -105,7 +105,7 @@
     <Compile Include="facebook_page.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="IFbClient.cs" />
+    <Compile Include="ICommunityClient.cs" />
     <Compile Include="LoginService.asmx.cs">
       <DependentUpon>LoginService.asmx</DependentUpon>
       <SubType>Component</SubType>
