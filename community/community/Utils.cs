@@ -16,13 +16,12 @@ namespace community
         public static readonly PageSyncFilter SYNC_NEW_PAGES =
             (db, page) => db.posts.FirstOrDefault(post => post.facebook_page_id == page.id) == null;  
 
-        public static void SyncPosts(PageSyncFilter filter)
-        {
-            ICommunityClient client = new CommunityFbClient(1000);
-            Social_PresenceEntities model = new Social_PresenceEntities();
-            SyncPosts(client, model, filter);
-        }
-
+        /// <summary>
+        /// Synchronizes posts retrived from the ICommunityClient to the database
+        /// </summary>
+        /// <param name="client">Social presence data client</param>
+        /// <param name="model">Database reference</param>
+        /// <param name="filter">Must return true for the pages whose posts need to be synced. See predefined filters in Utils.</param>
         public static void SyncPosts(ICommunityClient client, Social_PresenceEntities model, PageSyncFilter filter)
         {
             var pages = new List<facebook_page>(model.facebook_page);

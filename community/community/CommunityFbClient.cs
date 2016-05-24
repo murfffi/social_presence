@@ -7,11 +7,18 @@ using System.Web;
 
 namespace community
 {
+    /// <summary>
+    /// Facebook client for social presence data
+    /// </summary>
     public class CommunityFbClient : ICommunityClient
     {
         private readonly FacebookClient client = new FacebookClient("541069762740573|onSnaCSnHAUqceURGGh9e7pMMX8");
         private int delayMillis;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="delayMillis">delay between calls to Facebook Graph API in milliseconds</param>
         public CommunityFbClient(int delayMillis)
         {
             this.delayMillis = delayMillis;
