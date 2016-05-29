@@ -6,6 +6,8 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server"/>
+
     <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true">
         <DataControls>
             <asp:DataControlReference ControlID="FormView1" />
@@ -54,6 +56,9 @@
             
             <asp:QueryExtender ID="GridQueryExtender" TargetControlID="GridDataSource" runat="server">
                 <asp:DynamicFilterExpression ControlID="FilterRepeater" />
+<%--                <asp:PropertyExpression>
+                    <asp:ControlParameter PropertyName=""
+                </asp:PropertyExpression>--%>
             </asp:QueryExtender>
 
             <asp:Button runat="server" ID="btnCsvExport" OnClick="btnCsvExport_Click" Text="Export to CSV" />

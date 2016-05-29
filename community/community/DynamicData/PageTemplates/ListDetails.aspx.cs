@@ -23,6 +23,8 @@ namespace community
             FormView1.SetMetaTable(table);
             GridDataSource.EntityTypeFilter = table.EntityType.Name;
             DetailsDataSource.EntityTypeFilter = table.EntityType.Name;
+            //ScriptManager.RegisterStartupScript(DetailsPanel, DetailsPanel.GetType(), "scroll",
+            //    "", true);
 
         }
 
@@ -88,6 +90,13 @@ namespace community
         {
             GridView1.EditIndex = -1;
             FormView1.ChangeMode(FormViewMode.ReadOnly);
+            FocusOnDetails();
+        }
+
+        private void FocusOnDetails()
+        {
+            ScriptManager.RegisterStartupScript(DetailsPanel, DetailsPanel.GetType(), "scroll",
+                "$('#" + DetailsPanel.ClientID + "').get(0).scrollIntoView(true)", true);
         }
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
@@ -132,6 +141,7 @@ namespace community
             {
                 GridView1.EditIndex = -1;
             }
+            FocusOnDetails();
         }
 
         protected void FormView1_PreRender(object sender, EventArgs e)
