@@ -96,7 +96,7 @@ group by has_location "></asp:SqlDataSource>
                 </Titles>
             </asp:Chart>
             <asp:SqlDataSource ID="SqlDataSourceShortName" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="select count(1) AS cnt, has_short_name  from (
-SELECT iif([defined_location] is not null, 'yes', 'no') AS has_short_name FROM [facebook_page]
+SELECT iif([short_name] is not null, 'yes', 'no') AS has_short_name FROM [facebook_page]
 ) as tbl
 group by has_short_name"></asp:SqlDataSource>
             <div>        
@@ -240,6 +240,34 @@ from (SELECT cast(count(1) as float) / (DATEDIFF(week, creation_date, max(date))
   [dbo].[post] on [facebook_page].id = post.facebook_page_id
   group by facebook_page_id, creation_date) as tbl) as tbl2
   group by category"></asp:SqlDataSource>
+
+
+        <asp:Chart ID="Chart8" runat="server" DataSourceID="SqlDataSourceContactDetails">
+            <Series>
+                <asp:Series ChartType="Pie" IsValueShownAsLabel="True" Label="#PERCENT" Legend="Legend1" LegendText="#VALX" Name="Series1" XValueMember="has_all_details_title" YValueMembers="cnt">
+                </asp:Series>
+            </Series>
+            <ChartAreas>
+                <asp:ChartArea Name="ChartArea1">
+                </asp:ChartArea>
+            </ChartAreas>
+            <Legends>
+                <asp:Legend Name="Legend1" Title="Legend">
+                </asp:Legend>
+            </Legends>
+            <Titles>
+                <asp:Title Name="Title1" Text="Percentage of munacipalities which have full list of contact details(phone number, email, website)">
+                </asp:Title>
+            </Titles>
+        </asp:Chart>
+        <asp:SqlDataSource ID="SqlDataSourceContactDetails" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="select 
+count(1) as cnt, 
+case has_all_details when 1 then 'yes' else 'no' end as has_all_details_title
+from (
+  select has_phone &amp; has_email &amp;
+    cast(CASE WHEN website is not null THEN 1 ELSE 0 END as bit) as has_all_details
+  from facebook_page) as tbl
+group by has_all_details"></asp:SqlDataSource>
 
 
         <br />
