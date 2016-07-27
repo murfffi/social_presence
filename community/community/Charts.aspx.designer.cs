@@ -13,6 +13,87 @@ namespace community {
     public partial class Charts {
         
         /// <summary>
+        /// ChartNumberMuniFB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartNumberMuniFB;
+        
+        /// <summary>
+        /// ChartCreationDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartCreationDate;
+        
+        /// <summary>
+        /// ChartPagesByCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartPagesByCategory;
+        
+        /// <summary>
+        /// ChartActivity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartActivity;
+        
+        /// <summary>
+        /// ChartPostLength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartPostLength;
+        
+        /// <summary>
+        /// ChartWeeklyActivity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartWeeklyActivity;
+        
+        /// <summary>
+        /// ChartContactDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartContactDetails;
+        
+        /// <summary>
+        /// ChartHasAboutPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartHasAboutPage;
+        
+        /// <summary>
+        /// ChartHasLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartHasLocation;
+        
+        /// <summary>
         /// ChartHasPhone control.
         /// </summary>
         /// <remarks>
@@ -20,6 +101,15 @@ namespace community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.DataVisualization.Charting.Chart ChartHasPhone;
+        
+        /// <summary>
+        /// ChartShortName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartShortName;
         
         /// <summary>
         /// SqlDataSourceHasDefinedLocation control.
@@ -40,24 +130,6 @@ namespace community {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceHasPhone;
         
         /// <summary>
-        /// ChartHasLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartHasLocation;
-        
-        /// <summary>
-        /// ChartHasAboutPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartHasAboutPage;
-        
-        /// <summary>
         /// SqlDataSourceHasAboutPage control.
         /// </summary>
         /// <remarks>
@@ -65,24 +137,6 @@ namespace community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceHasAboutPage;
-        
-        /// <summary>
-        /// Chart1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart1;
-        
-        /// <summary>
-        /// Chart2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart2;
         
         /// <summary>
         /// SqlDataSourceShortName control.
@@ -94,15 +148,6 @@ namespace community {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceShortName;
         
         /// <summary>
-        /// Chart5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart5;
-        
-        /// <summary>
         /// SqlDataSourceNumberMuniFB control.
         /// </summary>
         /// <remarks>
@@ -110,15 +155,6 @@ namespace community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceNumberMuniFB;
-        
-        /// <summary>
-        /// Chart3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart3;
         
         /// <summary>
         /// SqlDataSourceCreationDate control.
@@ -139,15 +175,6 @@ namespace community {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourcePagesByCategory;
         
         /// <summary>
-        /// Chart4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart4;
-        
-        /// <summary>
         /// SqlDataSourceActivity control.
         /// </summary>
         /// <remarks>
@@ -155,15 +182,6 @@ namespace community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceActivity;
-        
-        /// <summary>
-        /// Chart6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart6;
         
         /// <summary>
         /// SqlDataSourcePostLenght control.
@@ -175,15 +193,6 @@ namespace community {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourcePostLenght;
         
         /// <summary>
-        /// Chart7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart7;
-        
-        /// <summary>
         /// SqlDataSourceWeeklyActivity control.
         /// </summary>
         /// <remarks>
@@ -191,15 +200,6 @@ namespace community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceWeeklyActivity;
-        
-        /// <summary>
-        /// Chart8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart8;
         
         /// <summary>
         /// SqlDataSourceContactDetails control.

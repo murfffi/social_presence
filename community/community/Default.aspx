@@ -6,8 +6,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server"/>
 
-    <div style="float: right"><a href="AdminLogin.aspx">Admin</a></div>
-    <div style="float: right; margin-right:5px;"><a href="Charts.aspx">Charts</a></div>
+    <%--<div style="float: right"><a href="AdminLogin.aspx">Admin</a></div>--%>
+    <div class="SPChartsLink"><a href="Charts.aspx">Charts</a></div>
     <h2 class="DDSubHeader">Add social presence:</h2>
 
     <asp:GridView ID="Menu1" runat="server" AutoGenerateColumns="false"

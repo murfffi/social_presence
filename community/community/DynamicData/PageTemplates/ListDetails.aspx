@@ -48,7 +48,7 @@
                     <asp:GridViewPager runat="server" />
                 </PagerTemplate>
                 <EmptyDataTemplate>
-                    There are currently no items in this table.
+                     <span class="SPEmptyData">There are currently no items in this table.</span>
                 </EmptyDataTemplate>
             </asp:GridView>
 
@@ -61,7 +61,7 @@
                 </asp:PropertyExpression>--%>
             </asp:QueryExtender>
 
-            <asp:Button runat="server" ID="btnCsvExport" OnClick="btnCsvExport_Click" Text="Export to CSV" />
+            <asp:Button runat="server" ID="btnCsvExport" OnClick="btnCsvExport_Click" Text="Export to CSV" class="SPExport"/>
 
             <asp:Panel ID="DetailsPanel" runat="server">
                 <br /><br />

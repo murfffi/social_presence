@@ -124,6 +124,10 @@ namespace community
             GridView1.DataBind();
         }
 
+        SendEmail mailer = new SendEmail();
+        EmailInfo eMail = new EmailInfo();
+        Sender sendemail = new Sender();
+
         protected void FormView1_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
             GridView1.DataBind();
@@ -133,6 +137,16 @@ namespace community
                 Trace.Write(e.Values.ToString());
             }
             // send email
+
+            sendemail.Email = "test@test.com";
+            sendemail.Name = "Evelina";
+
+            eMail.Subject = "Test";
+            eMail.Body = "This is test!!!!";
+            eMail.ToAddress = "evelina.nozhcheva@gmail.com";//"kspassov@gmail.com"; //"evelina.nozhcheva@gmail.com";
+            mailer.SendMail(sendemail, eMail);
+            //Literal1.Text = "Email was sent successfully!";
+            //Literal1.Visible = true;
         }
 
         protected void FormView1_ModeChanging(object sender, FormViewModeEventArgs e)

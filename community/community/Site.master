@@ -7,6 +7,7 @@
     <title>Dynamic Data Site</title>
     <link href="~/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Scripts/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.eyewalker.com/_en/restyle.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -92,7 +93,7 @@
         }
     </script>
 
-    <h1 class="DDMainHeader">Social Presence Editor</h1>
+    <h1 class="DDMainHeader"><span class="SPMainHeader">Social Presence Editor</span></h1>
     <div class="DDNavigation">
         <a runat="server" href="~/"><img alt="Back to home page" runat="server" src="DynamicData/Content/Images/back.gif" />Back to home page</a>
 
@@ -103,8 +104,8 @@
         -->
 
         <div style="float: right">
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true">
-            </fb:login-button>
+            <span class="SPLogin"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true">
+            </fb:login-button></span>
             <div id="status">
             </div>
         </div>

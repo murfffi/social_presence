@@ -49,7 +49,7 @@
                     <asp:GridViewPager runat="server" />
                 </PagerTemplate>
                 <EmptyDataTemplate>
-                    There are currently no items in this table.
+                    <span class="SPEmptyData">There are currently no items in this table.</span>
                 </EmptyDataTemplate>
             </asp:GridView>
 
