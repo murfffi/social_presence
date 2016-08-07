@@ -137,7 +137,7 @@
     </div>
     </form>
     <div id="footer">
-        <a href="#" onclick='$( "#dialog" ).dialog()'>Embed</a>
+        <div class="SPEmbedBtn"><a href="#" onclick='$( "#dialog" ).dialog()'>Embed</a></div>
     </div>
 
     <script>
