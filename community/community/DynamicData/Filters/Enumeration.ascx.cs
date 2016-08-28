@@ -31,6 +31,7 @@ namespace community
                     DropDownList1.Items.Add(new ListItem("[Not Set]", NullValueString));
                 }
                 PopulateListControl(DropDownList1);
+
                 // Set the initial value if there is one
                 string initialValue = DefaultValue;
                 if (!String.IsNullOrEmpty(initialValue))

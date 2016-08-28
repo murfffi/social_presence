@@ -102,6 +102,13 @@
     <Compile Include="Contributor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DrillDown.aspx.cs">
+      <DependentUpon>DrillDown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrillDown.aspx.designer.cs">
+      <DependentUpon>DrillDown.aspx</DependentUpon>
+    </Compile>
     <Compile Include="facebook_page.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -152,6 +159,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Content Include="DrillDown.aspx" />
     <Content Include="Global.asax" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

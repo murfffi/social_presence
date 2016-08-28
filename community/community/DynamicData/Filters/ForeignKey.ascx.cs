@@ -39,6 +39,15 @@ namespace community
                     DropDownList1.Items.Add(new ListItem("[Not Set]", NullValueString));
                 }
                 PopulateListControl(DropDownList1);
+
+                List<ListItem> listCopy = new List<ListItem>();
+                foreach (ListItem item in DropDownList1.Items)
+                    listCopy.Add(item);
+                DropDownList1.Items.Clear();
+                IEnumerable<ListItem> ordered = listCopy.OrderBy(item => item.Text);
+                foreach (ListItem item in ordered)
+                    DropDownList1.Items.Add(item);
+
                 // Set the initial value if there is one
                 string initialValue = DefaultValue;
                 if (!String.IsNullOrEmpty(initialValue))

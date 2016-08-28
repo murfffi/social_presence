@@ -138,12 +138,16 @@ namespace community
             }
             // send email
 
-            sendemail.Email = "test@test.com";
-            sendemail.Name = "Evelina";
+            sendemail.Email = "socialpresence2016@gmail.com";
+            sendemail.Name = "Social Presence";
 
-            eMail.Subject = "Test";
-            eMail.Body = "This is test!!!!";
-            eMail.ToAddress = "evelina.nozhcheva@gmail.com";//"kspassov@gmail.com"; //"evelina.nozhcheva@gmail.com";
+            eMail.Subject = "Social presence update confirmation";
+            eMail.Body = "The data you have entered has been successfully added. You can review it below: \n";
+            foreach (Object key in e.Values.Keys)
+            {
+                eMail.Body += key.ToString() + ": " + e.Values[key] + "\n";
+            }
+            eMail.ToAddress = "evelina.nozhcheva@gmail.com,kspassov@gmail.com," + e.Values["contributor_email"]; //"kspassov@gmail.com";
             mailer.SendMail(sendemail, eMail);
             //Literal1.Text = "Email was sent successfully!";
             //Literal1.Visible = true;

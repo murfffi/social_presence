@@ -36,8 +36,8 @@ namespace community
                 {
                     DropDownList1.Items.Add(new ListItem("[Not Set]", NullValueString));
                 }
-                DropDownList1.Items.Add(new ListItem("True", Boolean.TrueString));
-                DropDownList1.Items.Add(new ListItem("False", Boolean.FalseString));
+                DropDownList1.Items.Add(new ListItem("Yes", Boolean.TrueString));
+                DropDownList1.Items.Add(new ListItem("No", Boolean.FalseString));
                 // Set the initial value if there is one
                 string initialValue = DefaultValue;
                 if (!String.IsNullOrEmpty(initialValue))

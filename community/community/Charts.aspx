@@ -3,6 +3,14 @@
 <%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+        <script type="text/javascript">
+            function showFacebookPagesIFrame(HasShortName) {
+                var iframe = document.getElementById('FacebookPagesShortName');
+                if (iframe) {
+                    iframe.src = 'DrillDown.aspx?HasShortName=' + HasShortName;
+                }
+            }
+    </script>
     <div class="SPChartsContainer">
         <div class="SPChart1"><asp:Chart ID="ChartNumberMuniFB" runat="server" DataSourceID="SqlDataSourceNumberMuniFB">
             <Series>
@@ -173,9 +181,9 @@
                 </asp:Title>
             </Titles>
         </asp:Chart></div>
-        <div class="SPChart11"><asp:Chart ID="ChartShortName" runat="server" DataSourceID="SqlDataSourceShortName">
+        <div class="SPChart11"><asp:Chart ID="ChartShortName" runat="server" DataSourceID="SqlDataSourceShortName" OnDataBound="ChartShortName_DataBound">
                 <Series>
-                    <asp:Series ChartType="Pie" IsValueShownAsLabel="True" Label="#PERCENT" Legend="Legend1" LegendText="#VALX" Name="Series1" XValueMember="has_short_name" YValueMembers="cnt">
+                    <asp:Series ChartType="Pie" IsValueShownAsLabel="True" Label="#PERCENT" Legend="Legend1" LegendText="#VALX" Name="Series1" XValueMember="has_short_name" YValueMembers="cnt,has_short_name" YValuesPerPoint="2">
                     </asp:Series>
                 </Series>
                 <ChartAreas>
@@ -190,7 +198,11 @@
                     <asp:Title Name="Title1" Text="Proportion of municipalities which use short names in their Facebook pages URLs">
                     </asp:Title>
                 </Titles>
-            </asp:Chart></div>
+            </asp:Chart>
+    <iframe id="FacebookPagesShortName" src="DrillDown.aspx" style="width:95%;height:800px;border:none;" frameborder="0"></iframe>
+
+        </div>
+
 
         <asp:SqlDataSource ID="SqlDataSourceHasDefinedLocation" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="select count(1) AS cnt, has_location  from (
 SELECT iif([defined_location] is null, 'yes', 'no') AS has_location FROM [facebook_page]

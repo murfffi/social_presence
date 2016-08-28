@@ -32,8 +32,16 @@ public class SendEmail
             fromAddress = new MailAddress(info.Email, info.Name);
         }
 
-        MailAddress toAddress = new MailAddress(email.ToAddress, "Micro Focus");
-        MailMessage msg = new MailMessage(fromAddress, toAddress);
+        
+        MailMessage msg = new MailMessage();
+        msg.From = fromAddress;
+
+        String[] MultiAddresses = email.ToAddress.Split(',');
+        foreach (string adress in MultiAddresses)
+        {
+            msg.To.Add(adress);
+        }
+
         msg.Subject = email.Subject;
         msg.IsBodyHtml = false;
         msg.Body = email.Body;
