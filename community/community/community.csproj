@@ -109,6 +109,13 @@
     <Compile Include="DrillDown.aspx.designer.cs">
       <DependentUpon>DrillDown.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\FieldTemplates\FBPageLink.ascx.cs">
+      <DependentUpon>FBPageLink.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\FBPageLink.ascx.designer.cs">
+      <DependentUpon>FBPageLink.ascx</DependentUpon>
+    </Compile>
     <Compile Include="facebook_page.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -160,6 +167,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Content Include="DrillDown.aspx" />
+    <Content Include="DynamicData\FieldTemplates\FBPageLink.ascx" />
     <Content Include="Global.asax" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

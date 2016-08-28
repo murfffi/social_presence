@@ -160,6 +160,7 @@ table.DDGridView, table.DDListView
 	color: #666;
 	border:solid 1px #dbddff;
 	font: .7em Tahoma, Arial, Sans-Serif;
+	text-align: center;
 }
 
 table.DDGridView .th, table.DDGridView .td, table.DDListView .th, table.DDListView .td
@@ -171,7 +172,6 @@ table.DDGridView .th, table.DDListView .th
 {
 	background: url(DynamicData/Content/Images/header_back.gif) repeat-x;
 	line-height:1.3em;
-	text-align: left;
 	font-size: 1em;
 	border:solid 1px #dbddff;
 }

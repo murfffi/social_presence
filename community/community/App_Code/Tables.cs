@@ -21,7 +21,7 @@ namespace community
 
         [Display(Order = 2, Name = "URL", Description = "Municipality Facebook page link")]
         [RegularExpression(Constants.URL_REGEX, ErrorMessage = "The URL is invalid.")]
-        [UIHint("Url")]
+        [UIHint("FBPageLink")]
         [StringLength(1000)]
         public object url;
 
@@ -82,8 +82,8 @@ namespace community
 
     public class FacebookPostMetadata
     {
-        [Display(Name = "Post id", Description = "Facebook post id")]
-        public object id;
+        //[Display(Name = "Post id", Description = "Facebook post id")]
+         [ScaffoldColumn(false)]public object id;
 
         [Display(Name = "Title", Description = "Facebook post title")]
         public object title;
