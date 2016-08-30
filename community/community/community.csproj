@@ -116,6 +116,13 @@
     <Compile Include="DynamicData\FieldTemplates\FBPageLink.ascx.designer.cs">
       <DependentUpon>FBPageLink.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MunicipalityChildren.ascx.cs">
+      <DependentUpon>MunicipalityChildren.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MunicipalityChildren.ascx.designer.cs">
+      <DependentUpon>MunicipalityChildren.ascx</DependentUpon>
+    </Compile>
     <Compile Include="facebook_page.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -168,6 +175,7 @@
     </Compile>
     <Content Include="DrillDown.aspx" />
     <Content Include="DynamicData\FieldTemplates\FBPageLink.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MunicipalityChildren.ascx" />
     <Content Include="Global.asax" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

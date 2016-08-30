@@ -153,5 +153,9 @@ namespace community
 
         [Display(Order = 7, Name = "Contributor email", Description = "This field is authomatically filled up with your Facebook profile email address")]
         public object contributor_email;
+
+        [Display(Order = 8, Name = "Facebook page data form", Description = "View data form")]
+        [UIHint("MunicipalityChildren")]
+        public object facebook_page;
     }
 }
