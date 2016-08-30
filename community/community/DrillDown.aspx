@@ -14,7 +14,8 @@
             <Columns>
                 <asp:BoundField DataField="facebook_page_name" HeaderText="Facebook page name" SortExpression="facebook_page_name" />
                 <asp:BoundField DataField="municipality_name" HeaderText="Municipality name" SortExpression="municipality_name" />
-                <asp:BoundField DataField="website" HeaderText="Website" SortExpression="website" />
+                <%--<asp:BoundField DataField="url" HeaderText="Website" SortExpression="url" />--%>
+                <asp:HyperLinkField DataNavigateUrlFields="url" HeaderText="Website" SortExpression="url" DataTextField="url" NavigateUrl="url" Target="_blank"/>
                 <asp:BoundField DataField="short_name" HeaderText="Short name" SortExpression="short_name" />
                 <asp:CheckBoxField DataField="approved" HeaderText="Approved" SortExpression="approved" />
             </Columns>
@@ -31,7 +32,7 @@
         </asp:GridView>
     
         <asp:SqlDataSource ID="dsDrillDown" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" 
-            SelectCommand="SELECT [short_name], facebook_page.[name] as facebook_page_name, municipality.[name] as municipality_name, facebook_page.[website], facebook_page.[approved] FROM [facebook_page] inner join [Municipality] on municipality_id = Municipality.id  where iif([short_name] is not null, 'yes', 'no') = @HasShortName">
+            SelectCommand="SELECT [short_name], facebook_page.[name] as facebook_page_name, municipality.[name] as municipality_name, facebook_page.[url], facebook_page.[approved] FROM [facebook_page] inner join [Municipality] on municipality_id = Municipality.id  where iif([short_name] is not null, 'yes', 'no') = @HasShortName">
             <SelectParameters>
                 <asp:QueryStringParameter Name="HasShortName" QueryStringField="HasShortName" 
                     Type="String" />
