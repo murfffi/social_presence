@@ -35,6 +35,8 @@ namespace community
         public int liked_pages { get; set; }
         public bool approved { get; set; }
         public string contributor_email { get; set; }
+        public string facebook_id { get; set; }
+        public Nullable<byte> type { get; set; }
     
         public virtual Municipality Municipality { get; set; }
         public virtual ICollection<post> posts { get; set; }

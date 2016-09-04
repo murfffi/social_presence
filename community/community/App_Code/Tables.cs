@@ -14,6 +14,20 @@ namespace community
     {
     }
 
+    public enum FacebookPageType : byte
+    {
+        [Display(Name = "Official Municipality Facebook Page")]
+        Official_Page = 0,
+        [Display(Name = "Municipality Facebook Profile")]
+        Municipality_Profile = 1,
+        [Display(Name = "Mayor Facebook Profile")]
+        Mayor_Profile = 2,
+        [Display(Name = "Departamental Facebook Page")]
+        Departamental_Page = 3,
+        [Display(Name = "Other")]
+        Other = 4
+    }
+
     public class FacebookPageMetadata
     {
         [Display(Order=1, Description="Municipality name")]
@@ -31,41 +45,45 @@ namespace community
         [Display(Order = 4, Name = "Category", Description = "Municipality Facebook page category")]
         public object category;
 
-        [Display(Order = 5, Name = "Creation date", Description = "Municipality Facebook page creation date")]
+        [Display(Order = 6, Name = "Creation date", Description = "Municipality Facebook page creation date")]
         public object creation_date;
 
-        [Display(Order = 6, Name = "Defined location", Description = "Defined location in municipality Facebook page")]
+        [Display(Order = 7, Name = "Defined location", Description = "Defined location in municipality Facebook page")]
         public object defined_location;
 
-        [Display(Order = 7, Name = "Municipality website", Description = "Displayed municipality website in Facebook page")]
+        [Display(Order = 8, Name = "Municipality website", Description = "Displayed municipality website in Facebook page")]
         [RegularExpression(Constants.URL_REGEX, ErrorMessage = "The website is invalid.")]
         [UIHint("Url")] // show as regular textbox, not multiline, even though max length is a lot
         [StringLength(1000)]
         public object website;
 
-        [Display(Order = 8, Name = "Facebook page short name", Description = "Defined short name in municipality Facebook page")]
+        [Display(Order = 9, Name = "Facebook page short name", Description = "Defined short name in municipality Facebook page")]
         public object short_name;
 
-        [Display(Order = 9, Name = "Has phone", Description = "Displayed phone in municipality Facebook page")]
+        [Display(Order = 10, Name = "Has phone", Description = "Displayed phone in municipality Facebook page")]
         public object has_phone;
 
-        [Display(Order = 10, Name = "Has email", Description = "Displayed email in municipality Facebook page")]
+        [Display(Order = 11, Name = "Has email", Description = "Displayed email in municipality Facebook page")]
         public object has_email;
 
-        [Display(Order = 11, Name = "Has about page", Description = "Existance of About page in municipality Facebook page")]
+        [Display(Order = 12, Name = "Has about page", Description = "Existance of About page in municipality Facebook page")]
         public object has_about_page;
 
-        [Display(Order = 12, Name = "Milestones count", Description = "Milestones count(if there is such) in municipality Facebook page")]
+        [Display(Order = 13, Name = "Milestones count", Description = "Milestones count(if there is such) in municipality Facebook page")]
         public object milestones_count;
 
-        [Display(Order = 13, Name = "Liked pages count", Description = "Number of liked pages in municipality Facebook page")]
+        [Display(Order = 14, Name = "Liked pages count", Description = "Number of liked pages in municipality Facebook page")]
         public object liked_pages;
 
-        [Display(Order = 14, Name = "Approved", Description = "This field is authomatically filled up. Only administrator can change its value")]
+        [Display(Order = 15, Name = "Approved", Description = "This field is authomatically filled up. Only administrator can change its value")]
         public object approved;
 
-        [Display(Order = 15, Name = "Contributor email", Description = "This field is authomatically filled up with your Facebook profile email address")]
+        [Display(Order = 16, Name = "Contributor email", Description = "This field is authomatically filled up with your Facebook profile email address")]
         public object contributor_email;
+
+        [Display(Order = 5, Name = "Type", Description = "Choose from the list the type of found information")]
+        [EnumDataType(typeof(FacebookPageType))]
+        public object type;
     }
 
     [ScaffoldTable(true)]

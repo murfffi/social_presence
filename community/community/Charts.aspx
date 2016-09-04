@@ -4,11 +4,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         <script type="text/javascript">
-            function showFacebookPagesIFrame(HasShortName) {
-                var iframe = document.getElementById('FacebookPagesShortName');
+            function showFacebookPagesIFrame(paramName, paramValue, iframeId, drillDownPage) {
+                var iframe = document.getElementById(iframeId);
                 if (iframe) {
-                    iframe.src = 'DrillDown.aspx?HasShortName=' + HasShortName;
+                    iframe.src = drillDownPage + '?' + paramName + '=' + paramValue;
                 }
+            }
+
+            function showFacebookPagesIFrame_HasShortName(paramValue) {
+                showFacebookPagesIFrame('HasShortName', paramValue, 'FacebookPagesShortName', 'DrillDown.aspx');
+            }
+
+            function showFacebookPagesIFrame_HasPhone(paramValue) {
+                showFacebookPagesIFrame('HasPhone', paramValue, 'FacebookPagesPhone', 'DrillDown_FP_HasPhone.aspx');
             }
     </script>
     <div class="SPChartsContainer">
@@ -123,7 +131,7 @@
                 </asp:Legend>
             </Legends>
             <Titles>
-                <asp:Title Name="Title1" Text="Percentage of munacipalities which have full list of contact details(phone number, email, website)">
+                <asp:Title Name="Title1" Text="Percentage of municipality facebook pages which have full list of contact details(phone number, email, website)">
                 </asp:Title>
             </Titles>
         </asp:Chart></div>
@@ -141,7 +149,7 @@
                 </asp:Legend>
             </Legends>
             <Titles>
-                <asp:Title Name="Title1" Text="Propotion of municipalities which have about page">
+                <asp:Title Name="Title1" Text="Propotion of municipality facebook pages which have about page">
                 </asp:Title>
             </Titles>
         </asp:Chart></div>
@@ -163,7 +171,7 @@
                 </asp:Title>
             </Titles>
         </asp:Chart></div>
-        <div class="SPChart10"><asp:Chart ID="ChartHasPhone" runat="server" DataSourceID="SqlDataSourceHasPhone">
+        <div class="SPChart10"><asp:Chart ID="ChartHasPhone" runat="server" DataSourceID="SqlDataSourceHasPhone" OnDataBound="ChartHasPhone_DataBound">
             <series>
                 <asp:Series ChartType="Pie" Name="Series1" XValueMember="has_phone" YValueMembers="cnt" Legend="Legend1" IsValueShownAsLabel="True" Label="#PERCENT " LegendText="#VALX">
                 </asp:Series>
@@ -177,10 +185,13 @@
                 </asp:Legend>
             </Legends>
             <Titles>
-                <asp:Title Name="Title1" Text="Propotion of municipalities which have phone numbers">
+                <asp:Title Name="Title1" Text="Propotion of municipality facebook pages which have phone numbers">
                 </asp:Title>
             </Titles>
-        </asp:Chart></div>
+        </asp:Chart>
+    <iframe id="FacebookPagesPhone" src="DrillDown_FP_HasPhone.aspx" style="border:none;" frameborder="0"></iframe>
+
+        </div>
         <div class="SPChart11"><asp:Chart ID="ChartShortName" runat="server" DataSourceID="SqlDataSourceShortName" OnDataBound="ChartShortName_DataBound">
                 <Series>
                     <asp:Series ChartType="Pie" IsValueShownAsLabel="True" Label="#PERCENT" Legend="Legend1" LegendText="#VALX" Name="Series1" XValueMember="has_short_name" YValueMembers="cnt,has_short_name" YValuesPerPoint="2">
@@ -195,11 +206,11 @@
                     </asp:Legend>
                 </Legends>
                 <Titles>
-                    <asp:Title Name="Title1" Text="Proportion of municipalities which use short names in their Facebook pages URLs">
+                    <asp:Title Name="Title1" Text="Proportion of municipality facebook pages which use short names in their URLs">
                     </asp:Title>
                 </Titles>
             </asp:Chart>
-    <iframe id="FacebookPagesShortName" src="DrillDown.aspx" style="width:95%;height:800px;border:none;" frameborder="0"></iframe>
+    <iframe id="FacebookPagesShortName" src="DrillDown.aspx" style="border:none;" frameborder="0"></iframe>
 
         </div>
 

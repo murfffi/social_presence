@@ -47,6 +47,8 @@
           <Property Name="liked_pages" Type="int" Nullable="false" />
           <Property Name="approved" Type="bit" Nullable="false" />
           <Property Name="contributor_email" Type="nvarchar" MaxLength="100" />
+          <Property Name="facebook_id" Type="varchar" MaxLength="100" />
+          <Property Name="type" Type="smallint" />
         </EntityType>
         <EntityType Name="Municipality">
           <Key>
@@ -143,6 +145,8 @@
           <NavigationProperty Name="posts" Relationship="Social_PresenceModel.FK_post_facebook_page" FromRole="facebook_page" ToRole="post" />
           <Property Type="Boolean" Name="approved" Nullable="false" />
           <Property Type="String" Name="contributor_email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="facebook_id" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="type" Nullable="true" />
         </EntityType>
         <EntityType Name="Municipality">
           <Key>
@@ -223,6 +227,8 @@
           <EntitySetMapping Name="facebook_page">
             <EntityTypeMapping TypeName="Social_PresenceModel.facebook_page">
               <MappingFragment StoreEntitySet="facebook_page">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="facebook_id" ColumnName="facebook_id" />
                 <ScalarProperty Name="contributor_email" ColumnName="contributor_email" />
                 <ScalarProperty Name="approved" ColumnName="approved" />
                 <ScalarProperty Name="id" ColumnName="id" />

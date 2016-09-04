@@ -7,7 +7,7 @@
     <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server" />
 
     <%--<div style="float: right"><a href="AdminLogin.aspx">Admin</a></div>--%>
-    <div class="SPChartsLink"><a href="Charts.aspx">Charts</a></div>
+    <%--<div class="SPChartsLink"><a href="Charts.aspx">Charts</a></div>--%>
     <h2 class="DDSubHeader">Add social presence:</h2>
     <div class="SPHomeTable">
         <asp:GridView ID="Menu1" runat="server" AutoGenerateColumns="false"

@@ -126,6 +126,8 @@
                 <asp:ServiceReference Path="~/LoginService.asmx" InlineScript="true"/>
             </Services>
         </asp:ScriptManager>
+    <div class="SPChartsLink"><a href="Charts.aspx">Charts</a></div>
+        
 
         
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">

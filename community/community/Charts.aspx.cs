@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.WebControls;
 
 namespace community
@@ -25,11 +26,21 @@ namespace community
 
         protected void ChartShortName_DataBound(object sender, EventArgs e)
         {
-            foreach (System.Web.UI.DataVisualization.Charting.DataPoint point in ChartShortName.Series[0].Points)
+            initDrillDown(sender, "showFacebookPagesIFrame_HasShortName");
+        }
+
+        private static void initDrillDown(object sender, String functionName)
+        {
+            foreach (System.Web.UI.DataVisualization.Charting.DataPoint point in ((Chart)sender).Series[0].Points)
             {
-                string hasShortName = point.LegendText;
-                point.Url = String.Format("javascript:showFacebookPagesIFrame('{0}')", hasShortName);
+                string value = point.LegendText;
+                point.Url = String.Format("javascript:{1}('{0}')", value, functionName);
             }
+        }
+
+        protected void ChartHasPhone_DataBound(object sender, EventArgs e)
+        {
+            initDrillDown(sender, "showFacebookPagesIFrame_HasPhone");
 
         }
 
