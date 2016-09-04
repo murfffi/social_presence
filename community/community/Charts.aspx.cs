@@ -44,6 +44,26 @@ namespace community
 
         }
 
+        protected void ChartHasLocation_DataBound(object sender, EventArgs e)
+        {
+            initDrillDown(sender, "showFacebookPagesIFrame_HasLocation");
+
+        }
+
+        protected void ChartHasAboutPage_DataBound(object sender, EventArgs e)
+        {
+            initDrillDown(sender, "showFacebookPagesIFrame_HasAboutPage");
+
+        }
+
+        protected void ChartContactDetails_DataBound(object sender, EventArgs e)
+        {
+            initDrillDown(sender, "showFacebookPagesIFrame_HasAllDetails");
+            
+        }
+
+
+
     //     Protected Sub chtCategoriesProductCount_DataBound(ByVal sender As Object, ByVal e As System.EventArgs) Handles chtCategoriesProductCount.DataBound
     //    For Each point As DataPoint In chtCategoriesProductCount.Series("Categories").Points
     //        Dim categoryId As Integer = point.YValues(1)

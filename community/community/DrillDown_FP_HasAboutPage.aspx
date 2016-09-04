@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DrillDown_FP_HasPhone.aspx.cs" Inherits="community.DrillDown_FP_HasPhone" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DrillDown_FP_HasAboutPage.aspx.cs" Inherits="community.DrillDown_FP_HasAboutPage" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@
                 <asp:BoundField DataField="municipality_name" HeaderText="Municipality name" SortExpression="municipality_name" />
                 <%--<asp:BoundField DataField="url" HeaderText="Website" SortExpression="url" />--%>
                 <asp:HyperLinkField DataNavigateUrlFields="url" HeaderText="Website" SortExpression="url" NavigateUrl="url" Target="_blank" Text="link"/>
-                <asp:CheckBoxField DataField="has_phone" HeaderText="Has phone" SortExpression="has_phone" />
+                <asp:CheckBoxField DataField="has_about_page" HeaderText="Has about page" SortExpression="has_about_page" />
                 <asp:CheckBoxField DataField="approved" HeaderText="Approved" SortExpression="approved" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
@@ -34,9 +34,9 @@
         </asp:GridView>
     
         <asp:SqlDataSource ID="dsDrillDown" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" 
-            SelectCommand="SELECT [has_phone], facebook_page.[name] as facebook_page_name, municipality.[name] as municipality_name, facebook_page.[url], facebook_page.[approved] FROM [facebook_page] inner join [Municipality] on municipality_id = Municipality.id  where iif([has_phone] = 1, 'yes', 'no') = @HasPhone">
+            SelectCommand="SELECT [has_about_page], facebook_page.[name] as facebook_page_name, municipality.[name] as municipality_name, facebook_page.[url], facebook_page.[approved] FROM [facebook_page] inner join [Municipality] on municipality_id = Municipality.id  where iif([has_about_page] = 1, 'yes', 'no') = @HasAboutPage">
             <SelectParameters>
-                <asp:QueryStringParameter Name="HasPhone" QueryStringField="HasPhone" 
+                <asp:QueryStringParameter Name="HasAboutPage" QueryStringField="HasAboutPage" 
                     Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>

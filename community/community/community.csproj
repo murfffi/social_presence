@@ -102,6 +102,27 @@
     <Compile Include="Contributor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DrillDown_FP_HasAllDetails.aspx.cs">
+      <DependentUpon>DrillDown_FP_HasAllDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrillDown_FP_HasAllDetails.aspx.designer.cs">
+      <DependentUpon>DrillDown_FP_HasAllDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DrillDown_FP_HasAboutPage.aspx.cs">
+      <DependentUpon>DrillDown_FP_HasAboutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrillDown_FP_HasAboutPage.aspx.designer.cs">
+      <DependentUpon>DrillDown_FP_HasAboutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DrillDown_FP_HasLocation.aspx.cs">
+      <DependentUpon>DrillDown_FP_HasLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrillDown_FP_HasLocation.aspx.designer.cs">
+      <DependentUpon>DrillDown_FP_HasLocation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DrillDown_FP_HasPhone.aspx.cs">
       <DependentUpon>DrillDown_FP_HasPhone.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,6 +186,9 @@
     <Compile Include="Utils.cs" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="Charts.aspx" />
+    <Content Include="DrillDown_FP_HasAllDetails.aspx" />
+    <Content Include="DrillDown_FP_HasAboutPage.aspx" />
+    <Content Include="DrillDown_FP_HasLocation.aspx" />
     <Content Include="DrillDown_FP_HasPhone.aspx" />
     <Content Include="Default.aspx" />
     <Compile Include="Charts.aspx.cs">

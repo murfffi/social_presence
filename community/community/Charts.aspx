@@ -18,6 +18,18 @@
             function showFacebookPagesIFrame_HasPhone(paramValue) {
                 showFacebookPagesIFrame('HasPhone', paramValue, 'FacebookPagesPhone', 'DrillDown_FP_HasPhone.aspx');
             }
+
+            function showFacebookPagesIFrame_HasLocation(paramValue) {
+                showFacebookPagesIFrame('HasLocation', paramValue, 'FacebookPagesLocation', 'DrillDown_FP_HasLocation.aspx');
+            }
+
+            function showFacebookPagesIFrame_HasAboutPage(paramValue) {
+                showFacebookPagesIFrame('HasAboutPage', paramValue, 'FacebookPagesAboutPage', 'DrillDown_FP_HasAboutPage.aspx');
+            }
+            
+            function showFacebookPagesIFrame_HasAllDetails(paramValue) {
+                showFacebookPagesIFrame('HasAllDetails', paramValue, 'FacebookPagesAllDetails', 'DrillDown_FP_HasAllDetails.aspx');
+            }
     </script>
     <div class="SPChartsContainer">
         <div class="SPChart1"><asp:Chart ID="ChartNumberMuniFB" runat="server" DataSourceID="SqlDataSourceNumberMuniFB">
@@ -117,7 +129,7 @@
                 </asp:Title>
             </Titles>
         </asp:Chart></div>
-        <div class="SPChart7"><asp:Chart ID="ChartContactDetails" runat="server" DataSourceID="SqlDataSourceContactDetails">
+        <div class="SPChart7"><asp:Chart ID="ChartContactDetails" runat="server" DataSourceID="SqlDataSourceContactDetails" OnDataBound="ChartContactDetails_DataBound">
             <Series>
                 <asp:Series ChartType="Pie" IsValueShownAsLabel="True" Label="#PERCENT" Legend="Legend1" LegendText="#VALX" Name="Series1" XValueMember="has_all_details_title" YValueMembers="cnt">
                 </asp:Series>
@@ -134,8 +146,11 @@
                 <asp:Title Name="Title1" Text="Percentage of municipality facebook pages which have full list of contact details(phone number, email, website)">
                 </asp:Title>
             </Titles>
-        </asp:Chart></div>
-        <div class="SPChart8"><asp:Chart ID="ChartHasAboutPage" runat="server" DataSourceID="SqlDataSourceHasAboutPage">
+        </asp:Chart>
+    <iframe id="FacebookPagesAllDetails" src="DrillDown_FP_HasAllDetails.aspx" style="border:none;" frameborder="0"></iframe>
+            
+        </div>
+        <div class="SPChart8"><asp:Chart ID="ChartHasAboutPage" runat="server" DataSourceID="SqlDataSourceHasAboutPage" OnDataBound="ChartHasAboutPage_DataBound">
             <Series>
                 <asp:Series ChartType="Pie" IsValueShownAsLabel="True" Label=" #PERCENT" Legend="Legend1" LegendText="#VALX" Name="Series1" XValueMember="has_about_page" YValueMembers="cnt">
                 </asp:Series>
@@ -152,8 +167,11 @@
                 <asp:Title Name="Title1" Text="Propotion of municipality facebook pages which have about page">
                 </asp:Title>
             </Titles>
-        </asp:Chart></div>
-        <div class="SPChart9"><asp:Chart ID="ChartHasLocation" runat="server" DataSourceID="SqlDataSourceHasDefinedLocation">
+        </asp:Chart>
+    <iframe id="FacebookPagesAboutPage" src="DrillDown_FP_HasAboutPage.aspx" style="border:none;" frameborder="0"></iframe>
+
+        </div>
+        <div class="SPChart9"><asp:Chart ID="ChartHasLocation" runat="server" DataSourceID="SqlDataSourceHasDefinedLocation" OnDataBound="ChartHasLocation_DataBound">
             <Series>
                 <asp:Series Name="Series1" ChartType="Pie" Legend="Legend1" XValueMember="has_location" YValueMembers="cnt" IsValueShownAsLabel="True" Label=" #PERCENT" LegendText="#VALX">
                 </asp:Series>
@@ -170,7 +188,10 @@
                 <asp:Title Name="defined_location" Text="Propotion of municipalities which have defined locations">
                 </asp:Title>
             </Titles>
-        </asp:Chart></div>
+        </asp:Chart>
+    <iframe id="FacebookPagesLocation" src="DrillDown_FP_HasLocation.aspx" style="border:none;" frameborder="0"></iframe>
+
+        </div>
         <div class="SPChart10"><asp:Chart ID="ChartHasPhone" runat="server" DataSourceID="SqlDataSourceHasPhone" OnDataBound="ChartHasPhone_DataBound">
             <series>
                 <asp:Series ChartType="Pie" Name="Series1" XValueMember="has_phone" YValueMembers="cnt" Legend="Legend1" IsValueShownAsLabel="True" Label="#PERCENT " LegendText="#VALX">
