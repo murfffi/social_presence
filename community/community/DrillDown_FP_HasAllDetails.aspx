@@ -18,7 +18,7 @@
                 <asp:BoundField DataField="municipality_name" HeaderText="Municipality name" SortExpression="municipality_name" />
                 <%--<asp:BoundField DataField="url" HeaderText="Website" SortExpression="url" />--%>
                 <asp:HyperLinkField DataNavigateUrlFields="url" HeaderText="URL" SortExpression="url" NavigateUrl="url" Target="_blank" Text="link"/>
-                <asp:HyperLinkField DataNavigateUrlFields="website" HeaderText="Website" SortExpression="website" NavigateUrl="website" Target="_blank" Text="link"/>
+                <asp:HyperLinkField DataNavigateUrlFields="website" HeaderText="Website" SortExpression="website" Target="_blank" Text="link"/>
                 <asp:CheckBoxField DataField="has_phone" HeaderText="Has phone" SortExpression="has_phone" />
                 <asp:CheckBoxField DataField="has_email" HeaderText="Has email" SortExpression="has_email" />
                 <asp:CheckBoxField DataField="approved" HeaderText="Approved" SortExpression="approved" />
