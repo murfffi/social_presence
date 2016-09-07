@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Dynamic Data Site</title>
+    <title>Social Presence Editor</title>
     <link href="~/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Scripts/jquery-ui.css" rel="stylesheet" type="text/css" />
     <link href="http://www.eyewalker.com/_en/restyle.css" rel="stylesheet" type="text/css" />
