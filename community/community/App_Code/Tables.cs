@@ -46,12 +46,13 @@ namespace community
         public object category;
 
         [Display(Order = 6, Name = "Creation date", Description = "Municipality Facebook page creation date")]
+        [DataType(DataType.Date)]
         public object creation_date;
 
         [Display(Order = 7, Name = "Defined location", Description = "Defined location in municipality Facebook page")]
         public object defined_location;
 
-        [Display(Order = 8, Name = "Municipality website", Description = "Displayed municipality website in Facebook page")]
+        [Display(Order = 8, Name = "Website", Description = "The website, displayed in the facebook page")]
         [RegularExpression(Constants.URL_REGEX, ErrorMessage = "The website is invalid.")]
         [UIHint("Url")] // show as regular textbox, not multiline, even though max length is a lot
         [StringLength(1000)]
@@ -84,6 +85,9 @@ namespace community
         [Display(Order = 5, Name = "Type", Description = "Choose from the list the type of found information")]
         [EnumDataType(typeof(FacebookPageType))]
         public object type;
+
+        [ScaffoldColumn(false)]
+        public object facebook_id;
     }
 
     [ScaffoldTable(true)]
@@ -107,6 +111,7 @@ namespace community
         public object title;
 
         [Display(Name = "Creation date", Description = "Facebook post creation date")]
+        [DataType(DataType.Date)]
         public object date;
 
         [Display(Name = "Likes", Description = "Likes count for Facebook post")]

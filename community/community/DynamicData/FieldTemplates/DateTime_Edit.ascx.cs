@@ -38,7 +38,10 @@ namespace community
             }
             else
             {
-                Calendar1.SelectedDate = DateTime.ParseExact(FieldValueEditString, "dd-MMM-yy hh:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture);
+                Calendar1.SelectedDate = (DateTime) FieldValue;
+                // Using FieldValue directly should work, but if not it can be worked around with something like this,
+                // but with multiple format support:
+                //DateTime.ParseExact(FieldValueEditString, "dd-MMM-yy hh:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture);
             }
             Calendar1.VisibleDate = Calendar1.SelectedDate;
         }
