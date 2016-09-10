@@ -71,7 +71,7 @@
                 <div class="SPDetailsTable">
                     <asp:FormView ID="FormView1" runat="server" DataSourceID="DetailsDataSource" RenderOuterTable="false"
                         OnPreRender="FormView1_PreRender" OnModeChanging="FormView1_ModeChanging" OnItemUpdated="FormView1_ItemUpdated"
-                        OnItemInserted="FormView1_ItemInserted" OnItemDeleted="FormView1_ItemDeleted">
+                        OnItemInserted="FormView1_ItemInserted" OnItemDeleted="FormView1_ItemDeleted" OnItemDeleting="FormView1_ItemDeleting" OnItemInserting="FormView1_ItemInserting" OnItemUpdating="FormView1_ItemUpdating">
                         <HeaderTemplate>
                             <table id="detailsTable" class="DDDetailsTable" cellpadding="6">
                         </HeaderTemplate>
@@ -84,7 +84,7 @@
                                         <asp:LinkButton runat="server" CommandName="Delete" Text="Delete"
                                             OnClientClick='return confirm("Are you sure you want to delete this item?");' />
                                     </asp:PlaceHolder>
-                                    <asp:LinkButton runat="server" CommandName="New" Text="New" />
+                                    <asp:LinkButton runat="server" CommandName="New" Text="New" ID="phNewEntry" OnPreRender="phNewEntry_PreRender" EnableViewState="false"/>
                                 </td>
                             </tr>
                         </ItemTemplate>

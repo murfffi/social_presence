@@ -199,5 +199,40 @@ namespace community
             ((Control)sender).Visible = isAdmin;           
         }
 
+        protected void phNewEntry_PreRender(object sender, EventArgs e)
+        {
+            bool isLoggedIn = loggedIn();
+            ((WebControl)sender).Enabled = isLoggedIn;
+            if (!isLoggedIn)
+            {
+                ((LinkButton)sender).Text = "Login to create entries.";
+            }
+        }
+
+        private bool loggedIn()
+        {
+            return Session["Email"] != null;
+        }
+
+        protected void FormView1_Change(object sender, CancelEventArgs e)
+        {
+            e.Cancel = !loggedIn();
+        }
+
+        protected void FormView1_ItemDeleting(object sender, FormViewDeleteEventArgs e)
+        {
+            FormView1_Change(sender, e);
+        }
+
+        protected void FormView1_ItemInserting(object sender, FormViewInsertEventArgs e)
+        {
+            FormView1_Change(sender, e);
+        }
+
+        protected void FormView1_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+        {
+            FormView1_Change(sender, e);
+        }
+
     }
 }

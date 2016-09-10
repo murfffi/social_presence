@@ -18,11 +18,11 @@ namespace community
     {
 
         [WebMethod(EnableSession=true)]
-        public void DoLogin(string name, string email)
+        public string DoLogin(string name, string email)
         {
             if (email == (string) Session["Email"])
             {
-                return;
+                return "";
             }
             Session["Admin"] = null;
             Session["Email"] = email;
@@ -43,6 +43,17 @@ namespace community
                     Session["Admin"] = true;
                 }
             }
+
+            return "true";
+        }
+
+        [WebMethod(EnableSession = true)]
+        public string DoLogout()
+        {
+            string changed = Session["Email"] != null ? "true" : "";
+            Session["Admin"] = null;
+            Session["Email"] = null;
+            return changed;
         }
 
         private static Contributor HasSuchEmail(Social_PresenceEntities model, Contributor c)
