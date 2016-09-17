@@ -11,3 +11,5 @@
 /community/tests/obj/Debug
 /community/tests/obj/Release
 /community/sync/obj/Release
+~$*.doc*
+/*.tmp
