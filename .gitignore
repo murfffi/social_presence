@@ -13,3 +13,4 @@
 /community/sync/obj/Release
 ~$*.doc*
 /*.tmp
+/*.bak
