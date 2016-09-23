@@ -1,2 +1,40 @@
-<?xml version="1.0"?>
-<b:Sources SelectedStyle="" xmlns:b="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns="http://schemas.openxmlformats.org/officeDocument/2006/bibliography"><b:Source><b:Year>2007</b:Year><b:Volume>13</b:Volume><b:BIBTEX_Entry>article</b:BIBTEX_Entry><b:SourceType>JournalArticle</b:SourceType><b:Title>Social Network Sites: Definition, History, and Scholarship</b:Title><b:Tag>JCC4JCC4393</b:Tag><b:Publisher>Blackwell Publishing Inc</b:Publisher><b:URL>http://dx.doi.org/10.1111/j.1083-6101.2007.00393.x</b:URL><b:DOI>10.1111/j.1083-6101.2007.00393.x</b:DOI><b:Author><b:Author><b:NameList><b:Person><b:Last>Boyd</b:Last><b:First>Danah</b:First><b:Middle>M.</b:Middle></b:Person><b:Person><b:Last>Ellison</b:Last><b:First>Nicole</b:First><b:Middle>B.</b:Middle></b:Person></b:NameList></b:Author></b:Author><b:Pages>210-230</b:Pages><b:JournalName>Journal of Computer-Mediated Communication</b:JournalName><b:StandardNumber> ISSN: 1083-6101</b:StandardNumber><b:RefOrder>4</b:RefOrder><b:Guid>{FE15069E-ED61-49A3-97B5-2B20479761AE}</b:Guid></b:Source></b:Sources>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<b:Sources xmlns:b="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" SelectedStyle="">
+<b:Source>
+<b:BIBTEX_Entry>misc</b:BIBTEX_Entry>
+<b:SourceType>Misc</b:SourceType>
+<b:Title>Facebook Help Center textbar Facebook</b:Title>
+<b:Tag>_facebook_????</b:Tag>
+<b:URL>https://web.facebook.com/help/www/282489752085908/?helpref=hc_fnav</b:URL>
+<b:Author/>
+</b:Source>
+<b:Source>
+<b:Year>2007</b:Year>
+<b:Volume>13</b:Volume>
+<b:BIBTEX_Entry>article</b:BIBTEX_Entry>
+<b:SourceType>JournalArticle</b:SourceType>
+<b:Title>Social Network Sites: Definition, History, and Scholarship</b:Title>
+<b:Tag>boyd_social_2007</b:Tag>
+<b:URL>http://dx.doi.org/10.1111/j.1083-6101.2007.00393.x</b:URL>
+<b:DOI>10.1111/j.1083-6101.2007.00393.x</b:DOI>
+<b:Author>
+<b:Author>
+<b:NameList>
+<b:Person>
+<b:Last>Boyd</b:Last>
+<b:Middle>M.</b:Middle>
+<b:First>Danah</b:First>
+</b:Person>
+<b:Person>
+<b:Last>Ellison</b:Last>
+<b:Middle>B.</b:Middle>
+<b:First>Nicole</b:First>
+</b:Person>
+</b:NameList>
+</b:Author>
+</b:Author>
+<b:Pages>210-230</b:Pages>
+<b:JournalName>Journal of Computer-Mediated Communication</b:JournalName>
+<b:StandardNumber> ISSN: 1083-6101</b:StandardNumber>
+</b:Source>
+</b:Sources>
