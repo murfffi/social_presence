@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="7.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="community.AdminLogin" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAACAAAAAAAACJAAAA=</HashCode>
+      <FileName>AdminLogin.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.facebook_page">
+    <Position X="0.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgiAABAAEBAAAAIACAAACAAgNIAAAAQAIAAAAAgA=</HashCode>
+      <FileName>App_Code\Tables.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.FacebookPageMetadata">
+    <Position X="12" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAgiAAAAAABAAAAIACAAACAAgNIAAAAQAIAAAAAAA=</HashCode>
+      <FileName>App_Code\Tables.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.post">
+    <Position X="9.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAQAAAAAAEAEIAAAADAAIBABIIAAACAQAAAgA=</HashCode>
+      <FileName>App_Code\Tables.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.FacebookPostMetadata">
+    <Position X="7.75" Y="17.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAQAAAAAAAAEAAAAADAAIBABIIAAACAQAAAgA=</HashCode>
+      <FileName>App_Code\Tables.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Municipality">
+    <Position X="5.75" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAgAAAAAAIAAAAADAAAEAAAGAAAAAAAAAgA=</HashCode>
+      <FileName>App_Code\Tables.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.MunicipalityMetadata">
+    <Position X="3" Y="17.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAgAAAAAAIAAAAADAAAEAAAGAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Tables.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Charts" Collapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AxCEAAACAIgAJAAFQoKACgASEAAAAAAQAIgIABICAAA=</HashCode>
+      <FileName>Charts.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.CommunityFbClient">
+    <Position X="7.25" Y="11.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAAAAAAAIAAAAAAAAAEAABAAAAAA=</HashCode>
+      <FileName>CommunityFbClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="community.Constants">
+    <Position X="2.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community._Default" Collapsed="true">
+    <Position X="1.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAIAAAA=</HashCode>
+      <FileName>Default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DrillDown" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
+      <FileName>DrillDown.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DrillDown_FP_HasAboutPage" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
+      <FileName>DrillDown_FP_HasAboutPage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DrillDown_FP_HasAllDetails" Collapsed="true">
+    <Position X="1.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
+      <FileName>DrillDown_FP_HasAllDetails.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DrillDown_FP_HasLocation" Collapsed="true">
+    <Position X="3.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
+      <FileName>DrillDown_FP_HasLocation.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DrillDown_FP_HasPhone" Collapsed="true">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
+      <FileName>DrillDown_FP_HasPhone.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.GridViewPager" Collapsed="true">
+    <Position X="37.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAICBAACAIAACAAIIABgAACEAIAAEA=</HashCode>
+      <FileName>DynamicData\Content\GridViewPager.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DefaultEntityTemplate" Collapsed="true">
+    <Position X="39.25" Y="1.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="community.DefaultEntityTemplate._NamingContainer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DynamicData\EntityTemplates\Default.ascx.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAACAAAAAAAAAIECAAAAAAA=</HashCode>
+      <FileName>DynamicData\EntityTemplates\Default.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Default_EditEntityTemplate" Collapsed="true">
+    <Position X="35.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAACIAAAEAAAAIECAAAAAAA=</HashCode>
+      <FileName>DynamicData\EntityTemplates\Default_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Default_InsertEntityTemplate" Collapsed="true">
+    <Position X="37.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAACAAAAACAAAAEAAAAIECAAAAAAA=</HashCode>
+      <FileName>DynamicData\EntityTemplates\Default_Insert.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.BooleanField" Collapsed="true">
+    <Position X="34" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Boolean.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Boolean_EditField" Collapsed="true">
+    <Position X="32.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAACAAAAAAQEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Boolean_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.ChildrenField" Collapsed="true">
+    <Position X="39.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAEAAQBACAAAIAAAIAAQA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Children.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Children_InsertField" Collapsed="true">
+    <Position X="37.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Children_Insert.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DateTimeField" Collapsed="true">
+    <Position X="32.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\DateTime.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DateTime_EditField" Collapsed="true">
+    <Position X="41" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAQEAAEAAAAAAIAEAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\DateTime_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Decimal_EditField" Collapsed="true">
+    <Position X="34" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAABgAAAAAAQEAAAAAAAAAIgAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Decimal_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.EmailAddressField" Collapsed="true">
+    <Position X="32.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\EmailAddress.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.EmailAddress_EditField" Collapsed="true">
+    <Position X="41" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAACAAAAAAQEAAAAAAAAAIgAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\EmailAddress_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.EnumerationField" Collapsed="true">
+    <Position X="35.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Enumeration.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Enumeration_EditField" Collapsed="true">
+    <Position X="34" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAQAAAAgAAACAAAAAAQEAAAAgAAAAIAAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.ForeignKeyField" Collapsed="true">
+    <Position X="37" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAAAAAAAAAAAAAAAAAAAAQBACAAAAAAABAAQA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\ForeignKey.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.ForeignKey_EditField" Collapsed="true">
+    <Position X="41" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAQAAAAAAAACAAAAAAQEAAAAAAAAAIAAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Integer_EditField" Collapsed="true">
+    <Position X="39.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAABgAAAAAAQEAAAAAAAAAIgAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Integer_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.ManyToManyField" Collapsed="true">
+    <Position X="34" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\ManyToMany.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.ManyToMany_EditField" Collapsed="true">
+    <Position X="32.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABgAAAAAACAAAAAAAAAAACQAAAAAQEAAAIAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\ManyToMany_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.MultilineText_EditField" Collapsed="true">
+    <Position X="35.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAIgAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.TextField" Collapsed="true">
+    <Position X="34" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAACAQAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Text.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Text_EditField" Collapsed="true">
+    <Position X="32.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAACAAAAAAQEAAAAAAEAAIgAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Text_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.UrlField" Collapsed="true">
+    <Position X="37.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAEAACAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Url.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Url_EditField" Collapsed="true">
+    <Position X="35.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAACAAAAAAQEAAAAAAAAAIgAgA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\Url_Edit.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.BooleanFilter" Collapsed="true">
+    <Position X="35.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAYAAAADAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\Filters\Boolean.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.EnumerationFilter" Collapsed="true">
+    <Position X="37.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAYAAAADAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\Filters\Enumeration.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.ForeignKeyFilter" Collapsed="true">
+    <Position X="34" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAYAAAADABAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DynamicData\Filters\ForeignKey.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Details" Collapsed="true">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACAQCAAAAABAABAAAAAAACAAAgAAAADAAAAAAJAAAA=</HashCode>
+      <FileName>DynamicData\PageTemplates\Details.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Edit" Collapsed="true">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JACAACAAAAAhAABAAAAAAACAAAgAAAADAAAAAAIAAAA=</HashCode>
+      <FileName>DynamicData\PageTemplates\Edit.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Insert" Collapsed="true">
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JECAACAAAAABgABAAAAAAACAAAgAAAABAAAAAAIAAAA=</HashCode>
+      <FileName>DynamicData\PageTemplates\Insert.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.List" Collapsed="true">
+    <Position X="14.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAEKEAAAABAEBAAAAAAAEAAAkAEAABAAAgAAIAAAA=</HashCode>
+      <FileName>DynamicData\PageTemplates\List.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.ListDetails" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hLDAUCMAABAhiMJAIAgEIgBAAAmAEAAnAEBCAAICAAA=</HashCode>
+      <FileName>DynamicData\PageTemplates\ListDetails.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Global" Collapsed="true">
+    <Position X="35.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAACAAAAAAAAAAAAAAAAIBAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.LoginService" Collapsed="true">
+    <Position X="41" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAABAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>LoginService.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Social_PresenceEntities" Collapsed="true">
+    <Position X="41" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAEAAAAAAAAAAABEABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model1.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Contributor">
+    <Position X="0.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAEEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contributor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Site" Collapsed="true">
+    <Position X="39.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Site.master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.SNDEML" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAIIAAAAAIAAAAAAAAAQIAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>SNDEML.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.Utils">
+    <Position X="10.25" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DynamicData.FieldTemplates.FBPageLink" Collapsed="true">
+    <Position X="39.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\FBPageLink.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="community.DynamicData.FieldTemplates.MunicipalityChildren" Collapsed="true">
+    <Position X="37.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAEAAQBACAAAIAAAIAAQA=</HashCode>
+      <FileName>DynamicData\FieldTemplates\MunicipalityChildren.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendEmail">
+    <Position X="2.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sendemail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EmailInfo">
+    <Position X="5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIABAACAAQAAAAAAAAAAgAAAAIA=</HashCode>
+      <FileName>sendemail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sender">
+    <Position X="12.25" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAgAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sendemail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.UI.Page" Collapsed="true">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="community.ICommunityClient" Collapsed="true">
+    <Position X="32.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>ICommunityClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="community.FacebookPageType" Collapsed="true">
+    <Position X="32.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAABAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAIIA=</HashCode>
+      <FileName>App_Code\Tables.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
