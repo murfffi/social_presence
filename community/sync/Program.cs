@@ -13,7 +13,7 @@ namespace sync
         {
             ICommunityClient client = new CommunityFbClient(1000);
             Social_PresenceEntities model = new Social_PresenceEntities();
-            Utils.SyncPosts(client, model, Utils.SYNC_NEW_PAGES);
+            Utils.SyncPosts(client, model, Utils.SYNC_ALL_PAGES);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Web.UI;
 
 namespace community
 {
+    using System.Diagnostics;
     using PageSyncFilter = Func<Social_PresenceEntities, facebook_page, bool>;
 
     public class Utils
@@ -24,7 +25,11 @@ namespace community
         /// <param name="filter">Must return true for the pages whose posts need to be synced. See predefined filters in Utils.</param>
         public static void SyncPosts(ICommunityClient client, Social_PresenceEntities model, PageSyncFilter filter)
         {
+            Stopwatch executionSw = new Stopwatch();
+            Stopwatch saveSw = new Stopwatch();
+            executionSw.Start();
             var pages = new List<facebook_page>(model.facebook_page);
+            int i = 0;
             foreach (var page in pages)
             {
                 if (page.url == null || !filter(model, page))
@@ -39,12 +44,11 @@ namespace community
                     foreach (var newPost in posts)
                     {
                         var existingPost = model.posts.FirstOrDefault(p => p.id == newPost.id);
-                        if (existingPost != null)
+                        if (existingPost == null)
                         {
-                            model.posts.Remove(existingPost);
+                            model.posts.Add(newPost);
+                            Console.WriteLine("Added new post with ID: " + newPost.id);
                         }
-                        model.posts.Add(newPost);
-                        Console.WriteLine("Added new post with ID: " + newPost.id);
                     }
                 }
                 catch (Exception e)
@@ -52,10 +56,17 @@ namespace community
                     Console.WriteLine("Error retrieving posts for page {0}: {1}.", page.url, e);
                 }
 
-                Console.WriteLine("Saving posts ...");
-                model.SaveChanges();
 
+                Console.WriteLine("Saving posts ...");
+                saveSw.Restart();
+                model.SaveChanges();
+                saveSw.Stop();
+                Console.WriteLine("Saved posts for {0}", saveSw.Elapsed);                
+                ++i;
+                Console.WriteLine("Processed {0} pages out of {3} for {1}. {2} sec per page", 
+                    i, executionSw.Elapsed, executionSw.Elapsed.TotalSeconds / i, pages.Count);
             }
+            executionSw.Stop();
         }
     }
 }
