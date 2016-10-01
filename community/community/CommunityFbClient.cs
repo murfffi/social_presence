@@ -25,7 +25,7 @@ namespace community
             this.delayMillis = delayMillis;
         }
 
-        public List<post> GetPosts(String page, String contributorEmail, int pageId, int limit)
+        public List<post> GetPosts(String page, String contributorEmail, int pageId, int limit, HashSet<String> existingIds)
         {
             var result = new List<post>();
             if (!page.StartsWith("http") || !page.Contains("facebook.com")) 
@@ -61,13 +61,18 @@ namespace community
                 Console.WriteLine(e);
             }
 
+            if (id.StartsWith("http"))
+            {
+                id = pageUri.AbsolutePath;
+            }
+
             try
             {                
                 if (id == null || id.Length == 0)
                 {
                     return result;
                 }
-                info = Get(id + "/posts?fields=created_time,story,message,type,shares");
+                info = Get(id + "/posts?fields=created_time,story,message,type,shares&limit=100");
             }
             catch (Exception e)
             {
@@ -75,54 +80,69 @@ namespace community
                 return result;
             }
 
-            if (info.data == null)
-            {
-                Console.WriteLine("Error: " + info);
-                return result;
+            limit = getPostsFromPage(contributorEmail, pageId, limit, result, existingIds, info);
+            while (limit > 0 && info.paging != null && info.paging.next != null)
+            {                
+                Uri nextPageUri = new Uri(info.paging.next);
+                Console.WriteLine("Loading next page {0} ...", nextPageUri.PathAndQuery);
+                info = Get(nextPageUri.PathAndQuery);
+                Console.WriteLine("Loaded next page.");
+                limit = getPostsFromPage(contributorEmail, pageId, limit, result, existingIds, info);    
             }
+            return result;
+        }
 
-            foreach (dynamic facebookPost in info.data)
+        private int getPostsFromPage(String contributorEmail, int pageId, int limit, List<post> result, HashSet<String> existingIds, dynamic info)
+        {
+            if (info.data != null)
             {
-                if (limit-- == 0)
+                foreach (dynamic facebookPost in info.data)
                 {
-                    break;
-                }
-                post newPost = new post();
-                newPost.approved = true;
-                newPost.contributor_email = contributorEmail;
-                if (facebookPost.created_time != null)
-                {
-                    newPost.date = DateTime.Parse(facebookPost.created_time);
-                }
+                    if (limit-- == 0)
+                    {
+                        break;
+                    }
+                    if (existingIds.Contains(facebookPost.id))
+                    {
+                        continue;
+                    }
+                    existingIds.Add(facebookPost.id);
+                    post newPost = new post();
+                    newPost.approved = true;
+                    newPost.contributor_email = contributorEmail;
+                    if (facebookPost.created_time != null)
+                    {
+                        newPost.date = DateTime.Parse(facebookPost.created_time);
+                    }
 
-                newPost.title = facebookPost.story;
-                string msg = facebookPost.message;
-                if (msg != null)
-                {
-                    newPost.length = msg.Length;
-                    newPost.contains_hashtags = msg.Contains("#");
+                    newPost.title = facebookPost.story;
+                    string msg = facebookPost.message;
+                    if (msg != null)
+                    {
+                        newPost.length = msg.Length;
+                        newPost.contains_hashtags = msg.Contains("#");
+                        if (newPost.title == null)
+                        {
+                            newPost.title = msg.Substring(0, Math.Min(100, msg.Length)) + "...";
+                        }
+                    }
                     if (newPost.title == null)
                     {
-                        newPost.title = msg.Substring(0, Math.Min(100, msg.Length)) + "...";
+                        newPost.title = "No title";
                     }
-                }
-                if (newPost.title == null)
-                {
-                    newPost.title = "No title";
-                }
-                newPost.type = facebookPost.type;
-                newPost.fan_post = false;
-                newPost.has_responses = HasPostResponses(facebookPost.id);
-                newPost.likes = (int)GetPostLikes(facebookPost.id);                
-                newPost.facebook_page_id = pageId;
-                newPost.id = facebookPost.id;
-                newPost.mentions = facebookPost.shares != null ? (int)facebookPost.shares.count : 0;
+                    newPost.type = facebookPost.type;
+                    newPost.fan_post = false;
+                    newPost.has_responses = HasPostResponses(facebookPost.id);
+                    newPost.likes = (int)GetPostLikes(facebookPost.id);
+                    newPost.facebook_page_id = pageId;
+                    newPost.id = facebookPost.id;
+                    newPost.mentions = facebookPost.shares != null ? (int)facebookPost.shares.count : 0;
 
-                Console.WriteLine("Retrieved post: " + newPost);
-                result.Add(newPost);
+                    Console.WriteLine("Retrieved post: " + newPost);
+                    result.Add(newPost);
+                }
             }
-
-            return result;
+            return limit;
         }
 
         private bool HasPostResponses(string id)

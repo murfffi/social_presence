@@ -19,6 +19,6 @@ namespace community
         /// <param name="pageId">the ID of the page, corresponding to the URL</param>
         /// <param name="limit">retrieve up to that many posts; use Int32.MAX_VALUE for no limit</param>
         /// <returns>list of posts (approved=true); not null</returns>
-        List<post> GetPosts(String page, String contributorEmail, int pageId, int limit);
+        List<post> GetPosts(String page, String contributorEmail, int pageId, int limit, HashSet<String> existingIds);
     }
 }

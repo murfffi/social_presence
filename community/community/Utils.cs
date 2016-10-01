@@ -36,6 +36,9 @@ namespace community
             int addedPosts = 0;
             int existingPosts = 0;
             int failedToStorePosts = 0;
+            var postIds = model.posts.Select(p => p.id);
+            var postIdSet = new HashSet<string>(postIds);
+
             foreach (var page in pages)
             {
                 int addedPostsForPage = 0;
@@ -48,21 +51,12 @@ namespace community
                 {
                     Console.WriteLine("Retrieving posts for page {0}; id: {1}", page.url, page.id);
                     Console.WriteLine("Type: {0}", page.type);
-                    List<post> posts = client.GetPosts(page.url, page.contributor_email, page.id, Int32.MaxValue);
+                    List<post> posts = client.GetPosts(page.url, page.contributor_email, page.id, 1000 /* limit */, postIdSet);
                     foreach (var newPost in posts)
-                    {
-                        var existingPost = model.posts.FirstOrDefault(p => p.id == newPost.id);
-                        if (existingPost == null /*&& !addedIds.Contains(newPost.id)*/)
-                        {
-                            model.posts.Add(newPost);
-                            Console.WriteLine("Added new post with ID: " + newPost.id);
-                            ++addedPostsForPage;
-                            //addedIds.Add(newPost.id);
-                        }
-                        else
-                        {
-                            ++existingPosts;
-                        }
+                    {                        
+                        model.posts.Add(newPost);
+                        Console.WriteLine("Added new post with ID: " + newPost.id);
+                        ++addedPostsForPage;
                     }
                 }
                 catch (Exception e)

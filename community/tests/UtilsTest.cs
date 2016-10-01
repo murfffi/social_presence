@@ -20,11 +20,10 @@ namespace tests
 
             var mockPageDbSet = mockDbSet(new List<facebook_page>() { makePage(1) });
             mockContext.Setup(m => m.facebook_page).Returns(mockPageDbSet.Object);
-
             var mockClient = new Mock<ICommunityClient>();
 
             var testPosts = makePosts(1, 1);
-            mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue))
+            mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue, new HashSet<string>()))
                 .Returns(testPosts);
             Utils.SyncPosts(mockClient.Object, mockContext.Object, Utils.SYNC_ALL_PAGES);
 
@@ -44,7 +43,7 @@ namespace tests
 
             var mockClient = new Mock<ICommunityClient>();
 
-            mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue))
+            mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue, new HashSet<string>()))
                 .Returns(testPosts);
             Utils.SyncPosts(mockClient.Object, mockContext.Object, Utils.SYNC_ALL_PAGES);
 
@@ -65,7 +64,7 @@ namespace tests
             for (int i = 0; i < 3; ++i)
             {
                 var testPosts = makePosts(i, 2);
-                mockClient.Setup(m => m.GetPosts("https://facebook.com/page" + i, "page" + i + "@example.com", i, Int32.MaxValue))
+                mockClient.Setup(m => m.GetPosts("https://facebook.com/page" + i, "page" + i + "@example.com", i, Int32.MaxValue, new HashSet<string>()))
                     .Returns(testPosts);
                 pageList.Add(makePage(i));
             }
@@ -89,11 +88,11 @@ namespace tests
             var mockClient = new Mock<ICommunityClient>();
 
             var testPosts = makePosts(1, 1);
-            mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue))
+            mockClient.Setup(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue, new HashSet<string>()))
                 .Returns(testPosts);
             Utils.SyncPosts(mockClient.Object, mockContext.Object, (a, b) => false);
 
-            mockClient.Verify(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue), Times.Never);
+            mockClient.Verify(m => m.GetPosts("https://facebook.com/page1", "page1@example.com", 1, Int32.MaxValue, new HashSet<string>()), Times.Never);
         }
 
         private facebook_page makePage(int id)

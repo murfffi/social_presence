@@ -11,7 +11,7 @@ namespace sync
     {
         static void Main(string[] args)
         {
-            ICommunityClient client = new CommunityFbClient(1000);
+            ICommunityClient client = new CommunityFbClient(500 /* delay millis */);
             Social_PresenceEntities model = new Social_PresenceEntities();
             Utils.SyncPosts(client, model, Utils.SYNC_ALL_PAGES);
         }
