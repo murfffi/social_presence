@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Web;
 
@@ -31,15 +32,42 @@ namespace community
             {
                 return result;
             }
+
+            Uri pageUri;
+            try
+            {
+                pageUri = new Uri(page);
+            }
+            catch (UriFormatException e)
+            {
+                Console.WriteLine(e);
+                return result;
+            }
+
+            var id = pageUri.AbsolutePath;
+
             dynamic info;
             try
             {
-                Uri pageUri = new Uri(page);
-                if (pageUri.AbsolutePath == null || pageUri.AbsolutePath.Length == 0)
+                info = Get("?id=" + WebUtility.UrlEncode(page.Replace("web.facebook", "www.facebook")));
+                if (info.id != null)
+                {
+                    id = info.id;
+                    Console.WriteLine("Found ID: {0}", id);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            try
+            {                
+                if (id == null || id.Length == 0)
                 {
                     return result;
                 }
-                info = Get(pageUri.AbsolutePath + "/posts?fields=created_time,story,message,type,shares");
+                info = Get(id + "/posts?fields=created_time,story,message,type,shares");
             }
             catch (Exception e)
             {
