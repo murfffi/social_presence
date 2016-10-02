@@ -112,6 +112,15 @@ namespace community {
         protected global::System.Web.UI.DataVisualization.Charting.Chart ChartShortName;
         
         /// <summary>
+        /// ChartPageType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.DataVisualization.Charting.Chart ChartPageType;
+        
+        /// <summary>
         /// SqlDataSourceHasDefinedLocation control.
         /// </summary>
         /// <remarks>
@@ -209,5 +218,14 @@ namespace community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceContactDetails;
+        
+        /// <summary>
+        /// SqlDataSourcePageType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourcePageType;
     }
 }

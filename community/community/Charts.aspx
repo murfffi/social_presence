@@ -232,8 +232,26 @@
                 </Titles>
             </asp:Chart>
     <iframe id="FacebookPagesShortName" src="DrillDown.aspx" style="border:none;" frameborder="0"></iframe>
-
-        </div>
+            </div>
+              <div class="SPChart12"><asp:Chart ID="ChartPageType" runat="server" DataSourceID="SqlDataSourcePageType">
+                <Series>
+                    <asp:Series ChartType="Pie" IsValueShownAsLabel="True" Label="#PERCENT" Legend="Legend1" LegendText="#VALX" Name="Series1" XValueMember="page_type" YValueMembers="cnt,page_type" YValuesPerPoint="2">
+                    </asp:Series>
+                </Series>
+                <ChartAreas>
+                    <asp:ChartArea Name="ChartArea1">
+                    </asp:ChartArea>
+                </ChartAreas>
+                <Legends>
+                    <asp:Legend Name="Legend1" Title="Legend">
+                    </asp:Legend>
+                </Legends>
+                <Titles>
+                    <asp:Title Name="Title1" Text="Proportion of municipality facebook pages per page type">
+                    </asp:Title>
+                </Titles>
+            </asp:Chart></div>
+        
 
 
         <asp:SqlDataSource ID="SqlDataSourceHasDefinedLocation" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="select count(1) AS cnt, has_location  from (
@@ -313,6 +331,17 @@ from (
     cast(CASE WHEN website is not null THEN 1 ELSE 0 END as bit) as has_all_details
   from facebook_page) as tbl
 group by has_all_details"></asp:SqlDataSource>
+
+        <asp:SqlDataSource ID="SqlDataSourcePageType" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="select 
+count(1) as cnt, 
+case [type] when 0 then 'Official Page'
+when 1 then 'Municipality Profile'
+when 2 then 'Mayor Profile'
+when 3 then 'Departamental Page'
+else 'Other' 
+end as page_type
+from facebook_page
+group by [type]"></asp:SqlDataSource>
 
       </div>
 
