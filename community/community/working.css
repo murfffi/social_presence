@@ -1,0 +1,367 @@
+@import 'http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Roboto:100,300,400,500&subset=cyrillic,cyrillic-ext';
+body {
+    font-weight: 300;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1.DDMainHeader {
+    display: block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 150px;
+    line-height: 150px;
+    margin: 0 0 28px 0!important;
+    padding: 0 30px!important;
+    font-weight: 300;
+    font-size: 3em!important;
+    font-variant-caps: normal!important;
+    color: #fff!important;
+    background-color: #29CEFF;
+    background-image: url('https://www.dropbox.com/s/vpkbpg47ie4enp7/banner-top.jpg?dl=1');
+    background-position: center;
+    text-align: center;
+}
+
+h2.DDSubHeader {
+    margin: 34px 0;
+    font-size: 2em;
+    color: #0078EF;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.DDNavigation {
+    max-width: 960px;
+    margin: -40px auto 8px auto!important;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.DDNavigation a {
+    display: inline-block!important;
+    width: 200px!important;
+    height: 30px!important;
+    margin: 5px auto!important;
+    line-height: 30px!important;
+    background-color: aliceblue!important;
+    text-decoration: none!important;
+    text-align: center!important;
+    color: #000!important;
+    text-decoration: none!important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.DDNavigation a:before {
+    content: "« "
+}
+
+.DDNavigation a:hover {
+    text-decoration: none!important;
+    background-color: #3ed3ff!important;
+    color: #fff!important;
+}
+
+.DDNavigation a img {
+    display: none;
+}
+
+.DDNavigation div {
+    width: 250px;
+    margin-top: -90px;
+}
+
+.DDNavigation div div {
+    margin: 0;
+    /* float: left; */
+    font-family: 'Roboto', sans-serif;
+}
+
+.SPLogin {
+    float: right;
+}
+
+#form1 {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.DDGridView tr.th {
+    background-image: none;
+    /* display: none; */
+}
+
+.DDGridView th {
+    text-align: center;
+    font-weight: 300;
+    font-size: 2em;
+    line-height: 3em;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.DDGridView tr.td td {
+    /* padding: 30px; */
+}
+
+.DDGridView tr td {
+    font-family: 'Roboto', sans-serif!important;
+    color: #000!important;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.DDGridView tr td a
+/*,
+#ContentPlaceHolder1_Menu1_HyperLink1_0,
+#ContentPlaceHolder1_Menu1_HyperLink1_1,
+#ContentPlaceHolder1_Menu1_HyperLink1_2,
+#ContentPlaceHolder1_Menu1_HyperLink1_3*/
+
+{
+    font-family: 'Roboto', sans-serif!important;
+    color: #007cd0!important;
+    text-decoration: none;
+    padding: 1em 10%;
+    display: block;
+    width: 80%;
+    max-width: 120px;
+    overflow: hidden;
+    line-height: 1.5em;
+    font-size: 1em;
+}
+
+.DDGridView tr td a:hover {
+    background-color: #eaeeee;
+    text-decoration: none!important;
+}
+
+.DDGridView tr.DDSelected {
+    background-color: #29CEFF
+}
+
+.DDGridView tr.DDSelected td {
+    color: #fafafa!important;
+}
+
+.DDFooter {
+    background-color: #01A9E7;
+}
+
+div.DDPager {
+    width: 100%;
+    height: 34px;
+    padding: 0!important;
+}
+
+span.DDFloatLeft,
+span.DDFloatRight {
+    margin: 10px;
+}
+
+span.DDFloatLeft label,
+span.DDFloatRight label {
+    color: #2C3D45!important;
+}
+
+.DDDetailsTable {
+    margin: 10px 0!important;
+}
+
+.DDDetailsTable td {
+    padding: 5px 10px!important;
+    font-family: 'Roboto', sans-serif!important;
+}
+
+.DDLightHeader {
+    font-weight: 700!important;
+    font-size: 1.2em;
+    font-family: 'Open Sans Condensed', sans-serif!important;
+}
+
+.DDLightHeader span {
+    font-family: 'Open Sans Condensed', sans-serif!important;
+}
+
+.DD {
+    background-color: #01A9E7;
+    padding: 13px;
+    margin: 0 0 13px 0;
+}
+
+.DD label,
+.DD select {
+    margin: 0 0 10px 0;
+}
+
+.DD label {
+    display: inline-block;
+    color: #fafafa;
+    width: 100px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.5em;
+}
+
+input [value='Export to CSV'] {
+    padding: 8px 12px!important;
+}
+
+#footer {
+    display: block;
+    height: 50px;
+    margin: 25px 0 0 0;
+    width: 100%;
+    text-align: center;
+    background-color: #2C3D45;
+}
+
+#footer a {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    margin: 10px auto 0 auto;
+    line-height: 30px;
+    background-color: aliceblue;
+    text-decoration: none;
+    color: #000;
+}
+
+#footer a:hover {
+    background-color: #3ed3ff;
+    color: #fff;
+}
+
+.SPChartsLink a {
+    margin: -97px 0 0 213px;
+    display: block;
+    z-index: 9999!important;
+    /*background-color: red;*/
+    position: absolute;
+    display: inline-block!important;
+    width: 160px!important;
+    height: 30px!important;
+    /* margin: 5px auto!important;*/
+    line-height: 30px!important;
+    background-color: aliceblue!important;
+    text-decoration: none!important;
+    text-align: center!important;
+    color: #000!important;
+    text-decoration: none!important;
+}
+
+.SPChartsLink a:hover {
+    text-decoration: none!important;
+    background-color: #3ed3ff!important;
+    color: #fff!important;
+}
+
+.SPChartsContainer:before {
+    content: "Dashboard / Charts";
+    display: block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 72px;
+    line-height: 45px;
+    text-align: left;
+    margin: 32px 0 0 0;
+    font-size: 2em;
+    color: #0078EF;
+}
+
+.SPChartsContainer div {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 60px;
+    display: inline-block;
+}
+
+.SPChartsContainer map {
+    display: none;
+}
+
+.SPChartsContainer .SPChart7,
+.SPChartsContainer .SPChart8,
+.SPChartsContainer .SPChart9,
+.SPChartsContainer .SPChart10,
+.SPChartsContainer .SPChart11 {
+    display: block!important;
+    width: 960px!important;
+}
+
+.SPChartsContainer .SPChart7 img,
+.SPChartsContainer .SPChart8 img,
+.SPChartsContainer .SPChart9 img,
+.SPChartsContainer .SPChart10 img,
+.SPChartsContainer .SPChart11 img {
+    display: inline-block;
+    /* width: 660px!important; */
+}
+
+.SPChartsContainer iframe {
+    display: block;
+    max-width: 660px!important;
+    max-height: 800px!important;
+    width: 660px!important;
+    height: 280px!important;
+    margin: -300px 0 0 300px;
+}
+
+.SPDrillDown {
+    width: 660px!important;
+}
+
+.SPDrillDown table {
+    width: 660px!important;
+}
+
+.SPDrillDown table tbody tr td {
+    padding: 10px 5px;
+}
+
+.SPDrillDown table tbody tr td a {
+    
+    font-family: 'Open Sans Condensed', sans-serif!important;
+    display: inline-block;
+    width: 142px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.SPDrillDown table tr th {
+    font-family: 'Open Sans Condensed', sans-serif!important;
+    padding: 10px 5px;
+}
+
+.SPDrillDown table > tbody > tr > td:nth-child(1) {
+    width: 150px;
+}
+
+.SPDrillDown table > tbody > tr > td:nth-child(2) {
+    width: 120px;
+}
+
+.SPDrillDown table > tbody > tr > td:nth-child(3) {
+    width: 142px;
+}
+
+.SPDrillDown table > tbody > tr > td:nth-child(4) {
+    width: 100px;
+}
+
+.SPDrillDown table > tbody > tr:nth-child(12) > td > table {
+    width: 200px;
+}
+
+/*
+.SPDrillDown table table td {
+    width: 20px!important;
+}
+*/
+.SPHomeTable .DDGridView tr td {
+    text-align: center;
+}
+
+.SPHomeTable .DDGridView tr td a {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 0 auto;
+    width: 100%!important;
+}
