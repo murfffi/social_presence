@@ -300,7 +300,7 @@ else 'less than 1/3 posts'
 end as category
 from (SELECT cast(count(1) as float) / (DATEDIFF(week, creation_date, max(date)) + 1) as avrposts
   FROM
-  [dbo].[facebook_page] left join
+  [dbo].[facebook_page] inner join
   [dbo].[post] on [facebook_page].id = post.facebook_page_id
   group by facebook_page_id, creation_date) as tbl) as tbl2
   group by category"></asp:SqlDataSource>
