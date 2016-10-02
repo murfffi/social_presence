@@ -545,6 +545,7 @@
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="working.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -65,7 +65,8 @@
                     </asp:Title>
                 </Titles>
             </asp:Chart></div>
-        <div class="SPChart3"><asp:Chart ID="ChartPagesByCategory" runat="server" DataSourceID="SqlDataSourcePagesByCategory">
+        <p>
+        <div class="SPChart3"><asp:Chart ID="ChartPagesByCategory" runat="server" DataSourceID="SqlDataSourcePagesByCategory" Height="279px" Width="725px">
             <Series>
                 <asp:Series Name="Series1" XValueMember="category" YValueMembers="cnt" IsXValueIndexed="True">
                 </asp:Series>
@@ -78,7 +79,7 @@
                 <asp:Title Name="Title1" Text="Number of Facebook pages grouped by category">
                 </asp:Title>
             </Titles>
-        </asp:Chart></div>
+        </asp:Chart></div></p>
         <div class="SPChart4"><asp:Chart ID="ChartActivity" runat="server" DataSourceID="SqlDataSourceActivity">
             <Series>
                 <asp:Series Name="Series1" XValueMember="post_year" YValueMembers="Column1">
@@ -280,7 +281,8 @@ from facebook_page
 where creation_date is not null
 order by creation_date"></asp:SqlDataSource>
       
-        <asp:SqlDataSource ID="SqlDataSourcePagesByCategory" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="SELECT count(id) AS cnt, category FROM [facebook_page] GROUP BY [facebook_page].[category]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourcePagesByCategory" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" 
+            SelectCommand="SELECT count(id) AS cnt, category FROM [facebook_page] where category is not null GROUP BY [facebook_page].[category] having count(1)>4"></asp:SqlDataSource>
         
         <asp:SqlDataSource ID="SqlDataSourceActivity" runat="server" ConnectionString="<%$ ConnectionStrings:Social_PresenceConnectionString %>" SelectCommand="select count(1), post_year
 from (
