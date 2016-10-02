@@ -5,7 +5,7 @@
     <TypeIdentifier />
   </Class>
   <Class Name="community.AdminLogin" Collapsed="true">
-    <Position X="10.25" Y="2.5" Width="1.5" />
+    <Position X="3.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAACAAAAAAAACJAAAA=</HashCode>
       <FileName>AdminLogin.aspx.cs</FileName>
@@ -54,16 +54,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="community.Charts" Collapsed="true">
-    <Position X="7.5" Y="4.25" Width="1.5" />
+    <Position X="3.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AxCEAAACAIgAJAAFQoKACgASEAAAAAAQAIgIABICAAA=</HashCode>
+      <HashCode>AxCEAAACAIgAJAAFQoKACgASEAIAAAAQAIgMABICAAA=</HashCode>
       <FileName>Charts.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="community.CommunityFbClient">
     <Position X="7.25" Y="11.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAABAAAAAAAAIAAAAAAAAAEAABAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAABAAAAAAAAIAAAAAAAAAEAABAAAAAg=</HashCode>
       <FileName>CommunityFbClient.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -83,35 +83,35 @@
     </TypeIdentifier>
   </Class>
   <Class Name="community.DrillDown" Collapsed="true">
-    <Position X="12.5" Y="2.5" Width="1.5" />
+    <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
       <FileName>DrillDown.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="community.DrillDown_FP_HasAboutPage" Collapsed="true">
-    <Position X="14.75" Y="2.5" Width="1.5" />
+    <Position X="1.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
       <FileName>DrillDown_FP_HasAboutPage.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="community.DrillDown_FP_HasAllDetails" Collapsed="true">
-    <Position X="1.25" Y="4.25" Width="1.5" />
+    <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
       <FileName>DrillDown_FP_HasAllDetails.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="community.DrillDown_FP_HasLocation" Collapsed="true">
-    <Position X="3.25" Y="4.25" Width="1.5" />
+    <Position X="5.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
       <FileName>DrillDown_FP_HasLocation.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="community.DrillDown_FP_HasPhone" Collapsed="true">
-    <Position X="9.75" Y="4.25" Width="1.5" />
+    <Position X="5.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAIAAAA=</HashCode>
       <FileName>DrillDown_FP_HasPhone.aspx.cs</FileName>
@@ -126,14 +126,6 @@
   </Class>
   <Class Name="community.DefaultEntityTemplate" Collapsed="true">
     <Position X="39.25" Y="1.5" Width="1.5" />
-    <NestedTypes>
-      <Class Name="community.DefaultEntityTemplate._NamingContainer" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>DynamicData\EntityTemplates\Default.ascx.cs</NewMemberFileName>
-        </TypeIdentifier>
-        <Lollipop Position="0.2" />
-      </Class>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAAAAACAAAAAAAAAIECAAAAAAA=</HashCode>
       <FileName>DynamicData\EntityTemplates\Default.ascx.cs</FileName>
@@ -329,21 +321,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="community.Edit" Collapsed="true">
-    <Position X="12.25" Y="4.25" Width="1.5" />
+    <Position X="1.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>JACAACAAAAAhAABAAAAAAACAAAgAAAADAAAAAAIAAAA=</HashCode>
       <FileName>DynamicData\PageTemplates\Edit.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="community.Insert" Collapsed="true">
-    <Position X="5.25" Y="4.25" Width="1.5" />
+    <Position X="1.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>JECAACAAAAABgABAAAAAAACAAAgAAAABAAAAAAIAAAA=</HashCode>
       <FileName>DynamicData\PageTemplates\Insert.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="community.List" Collapsed="true">
-    <Position X="14.75" Y="4.25" Width="1.5" />
+    <Position X="3.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIBAEKEAAAABAEBAAAAAAAEAAAkAEAABAAAgAAIAAAA=</HashCode>
       <FileName>DynamicData\PageTemplates\List.aspx.cs</FileName>
@@ -392,7 +384,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="community.SNDEML" Collapsed="true">
-    <Position X="8" Y="2.5" Width="1.5" />
+    <Position X="1.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAIIAAAAAIAAAAAAAAAQIAAAAAAgAAAAAAIAAAA=</HashCode>
       <FileName>SNDEML.aspx.cs</FileName>
@@ -401,7 +393,7 @@
   <Class Name="community.Utils">
     <Position X="10.25" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAAAAgAAAAAAgAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Utils.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -441,7 +433,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="System.Web.UI.Page" Collapsed="true">
-    <Position X="7.5" Y="0.75" Width="1.5" />
+    <Position X="1.25" Y="0.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
