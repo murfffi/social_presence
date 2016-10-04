@@ -163,7 +163,16 @@ span.DDFloatRight label {
     color: #2C3D45!important;
 }
 
-.DDDetailsTable {
+.DDFilter {
+    width: 10%;
+    min-width: 45px;
+}
+
+.DDFilterForeignKey {
+    width: 75%;
+}
+
+DDFilterForeignKey .DDDetailsTable {
     margin: 10px 0!important;
 }
 
@@ -196,7 +205,7 @@ span.DDFloatRight label {
 .DD label {
     display: inline-block;
     color: #fafafa;
-    width: 100px;
+    width: 20%;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.5em;
 }
@@ -317,7 +326,6 @@ input [value='Export to CSV'] {
 }
 
 .SPDrillDown table tbody tr td a {
-    
     font-family: 'Open Sans Condensed', sans-serif!important;
     display: inline-block;
     width: 142px;
@@ -350,11 +358,13 @@ input [value='Export to CSV'] {
     width: 200px;
 }
 
+
 /*
 .SPDrillDown table table td {
     width: 20px!important;
 }
 */
+
 .SPHomeTable .DDGridView tr td {
     text-align: center;
 }
